@@ -6,8 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'form_notifier.freezed.dart';
 
 @freezed
-class CustomFormState<V extends FormFieldsMixin, F>
-    with _$CustomFormState<V, F> {
+class CustomFormState<V extends FormFieldsMixin, F> with _$CustomFormState<V, F> {
   const CustomFormState._();
   const factory CustomFormState.initial({
     @Default(false) bool isFormSent,
@@ -37,8 +36,7 @@ class CustomFormState<V extends FormFieldsMixin, F>
   }) = _Success<V, F>;
 }
 
-abstract class FormNotifier<V extends FormFieldsMixin, F>
-    extends StateNotifier<CustomFormState<V, F>> with FormMixin {
+abstract class FormNotifier<V extends FormFieldsMixin, F> extends StateNotifier<CustomFormState<V, F>> with FormMixin {
   FormNotifier(this.fieldsGenerator)
       : super(
           CustomFormState<V, F>.initial(
@@ -59,11 +57,11 @@ abstract class FormNotifier<V extends FormFieldsMixin, F>
   final V Function() fieldsGenerator;
 
   bool validateFormAndSave() {
-    fields.fieldsList.forEach((e) => e.validate());
+    fields.validate();
     return checkValidation();
   }
 
-  bool checkValidation() => fields.fieldsList.every((e) => e.isValid);
+  bool checkValidation() => fields.isValid;
 
   V get fields => state.fields;
 
@@ -91,6 +89,13 @@ abstract class FormNotifier<V extends FormFieldsMixin, F>
 
 mixin FormFieldsMixin {
   List<FormFieldObject> get fieldsList;
+
+  bool validate() {
+    fieldsList.forEach((e) => e.validate());
+    return isValid;
+  }
+
+  bool get isValid => fieldsList.every((e) => e.isValid);
 
   Iterator<FormFieldObject> createIterator() {
     return fieldsList.iterator;
