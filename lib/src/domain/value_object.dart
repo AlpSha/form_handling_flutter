@@ -179,6 +179,8 @@ class FormFieldObject<V, F> {
 
   // Returns true if and only if object is in valid state. Doesn't modify the object if it is on initial state. But simply returns false in that case.
   bool get isValid => _valueObject.isValid;
+
+  bool get showError => !_valueObject.isValid && !_valueObject.isInitial;
 }
 
 // If you are providing a valid value at initial, then use valid constructor instead of initial
