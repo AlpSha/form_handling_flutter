@@ -37,8 +37,8 @@ class $SignInFailureCopyWith<$Res> {
 
 /// @nodoc
 
-class _Service extends SignInFailure {
-  const _Service([this.message]) : super._();
+class ServiceFailure extends SignInFailure {
+  const ServiceFailure([this.message]) : super._();
 
   final String? message;
 
@@ -46,14 +46,14 @@ class _Service extends SignInFailure {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$ServiceCopyWith<_Service> get copyWith =>
-      __$ServiceCopyWithImpl<_Service>(this, _$identity);
+  $ServiceFailureCopyWith<ServiceFailure> get copyWith =>
+      _$ServiceFailureCopyWithImpl<ServiceFailure>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Service &&
+            other is ServiceFailure &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -67,20 +67,22 @@ class _Service extends SignInFailure {
 }
 
 /// @nodoc
-abstract mixin class _$ServiceCopyWith<$Res>
+abstract mixin class $ServiceFailureCopyWith<$Res>
     implements $SignInFailureCopyWith<$Res> {
-  factory _$ServiceCopyWith(_Service value, $Res Function(_Service) _then) =
-      __$ServiceCopyWithImpl;
+  factory $ServiceFailureCopyWith(
+          ServiceFailure value, $Res Function(ServiceFailure) _then) =
+      _$ServiceFailureCopyWithImpl;
   @useResult
   $Res call({String? message});
 }
 
 /// @nodoc
-class __$ServiceCopyWithImpl<$Res> implements _$ServiceCopyWith<$Res> {
-  __$ServiceCopyWithImpl(this._self, this._then);
+class _$ServiceFailureCopyWithImpl<$Res>
+    implements $ServiceFailureCopyWith<$Res> {
+  _$ServiceFailureCopyWithImpl(this._self, this._then);
 
-  final _Service _self;
-  final $Res Function(_Service) _then;
+  final ServiceFailure _self;
+  final $Res Function(ServiceFailure) _then;
 
   /// Create a copy of SignInFailure
   /// with the given fields replaced by the non-null parameter values.
@@ -88,7 +90,7 @@ class __$ServiceCopyWithImpl<$Res> implements _$ServiceCopyWith<$Res> {
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_Service(
+    return _then(ServiceFailure(
       freezed == message
           ? _self.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -99,8 +101,8 @@ class __$ServiceCopyWithImpl<$Res> implements _$ServiceCopyWith<$Res> {
 
 /// @nodoc
 
-class _EmailFailure extends SignInFailure {
-  const _EmailFailure(this.emailFailure) : super._();
+class EmailFailure extends SignInFailure {
+  const EmailFailure(this.emailFailure) : super._();
 
   final EmailSignInFailure emailFailure;
 
@@ -108,14 +110,14 @@ class _EmailFailure extends SignInFailure {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$EmailFailureCopyWith<_EmailFailure> get copyWith =>
-      __$EmailFailureCopyWithImpl<_EmailFailure>(this, _$identity);
+  $EmailFailureCopyWith<EmailFailure> get copyWith =>
+      _$EmailFailureCopyWithImpl<EmailFailure>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EmailFailure &&
+            other is EmailFailure &&
             (identical(other.emailFailure, emailFailure) ||
                 other.emailFailure == emailFailure));
   }
@@ -130,11 +132,11 @@ class _EmailFailure extends SignInFailure {
 }
 
 /// @nodoc
-abstract mixin class _$EmailFailureCopyWith<$Res>
+abstract mixin class $EmailFailureCopyWith<$Res>
     implements $SignInFailureCopyWith<$Res> {
-  factory _$EmailFailureCopyWith(
-          _EmailFailure value, $Res Function(_EmailFailure) _then) =
-      __$EmailFailureCopyWithImpl;
+  factory $EmailFailureCopyWith(
+          EmailFailure value, $Res Function(EmailFailure) _then) =
+      _$EmailFailureCopyWithImpl;
   @useResult
   $Res call({EmailSignInFailure emailFailure});
 
@@ -142,12 +144,11 @@ abstract mixin class _$EmailFailureCopyWith<$Res>
 }
 
 /// @nodoc
-class __$EmailFailureCopyWithImpl<$Res>
-    implements _$EmailFailureCopyWith<$Res> {
-  __$EmailFailureCopyWithImpl(this._self, this._then);
+class _$EmailFailureCopyWithImpl<$Res> implements $EmailFailureCopyWith<$Res> {
+  _$EmailFailureCopyWithImpl(this._self, this._then);
 
-  final _EmailFailure _self;
-  final $Res Function(_EmailFailure) _then;
+  final EmailFailure _self;
+  final $Res Function(EmailFailure) _then;
 
   /// Create a copy of SignInFailure
   /// with the given fields replaced by the non-null parameter values.
@@ -155,7 +156,7 @@ class __$EmailFailureCopyWithImpl<$Res>
   $Res call({
     Object? emailFailure = null,
   }) {
-    return _then(_EmailFailure(
+    return _then(EmailFailure(
       null == emailFailure
           ? _self.emailFailure
           : emailFailure // ignore: cast_nullable_to_non_nullable
@@ -176,8 +177,8 @@ class __$EmailFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _PasswordFailure extends SignInFailure {
-  const _PasswordFailure(this.passwordFailure) : super._();
+class SignInPasswordFailure extends SignInFailure {
+  const SignInPasswordFailure(this.passwordFailure) : super._();
 
   final PasswordFailure passwordFailure;
 
@@ -185,20 +186,22 @@ class _PasswordFailure extends SignInFailure {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$PasswordFailureCopyWith<_PasswordFailure> get copyWith =>
-      __$PasswordFailureCopyWithImpl<_PasswordFailure>(this, _$identity);
+  $SignInPasswordFailureCopyWith<SignInPasswordFailure> get copyWith =>
+      _$SignInPasswordFailureCopyWithImpl<SignInPasswordFailure>(
+          this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PasswordFailure &&
-            (identical(other.passwordFailure, passwordFailure) ||
-                other.passwordFailure == passwordFailure));
+            other is SignInPasswordFailure &&
+            const DeepCollectionEquality()
+                .equals(other.passwordFailure, passwordFailure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, passwordFailure);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(passwordFailure));
 
   @override
   String toString() {
@@ -207,59 +210,47 @@ class _PasswordFailure extends SignInFailure {
 }
 
 /// @nodoc
-abstract mixin class _$PasswordFailureCopyWith<$Res>
+abstract mixin class $SignInPasswordFailureCopyWith<$Res>
     implements $SignInFailureCopyWith<$Res> {
-  factory _$PasswordFailureCopyWith(
-          _PasswordFailure value, $Res Function(_PasswordFailure) _then) =
-      __$PasswordFailureCopyWithImpl;
+  factory $SignInPasswordFailureCopyWith(SignInPasswordFailure value,
+          $Res Function(SignInPasswordFailure) _then) =
+      _$SignInPasswordFailureCopyWithImpl;
   @useResult
   $Res call({PasswordFailure passwordFailure});
-
-  $PasswordFailureCopyWith<$Res> get passwordFailure;
 }
 
 /// @nodoc
-class __$PasswordFailureCopyWithImpl<$Res>
-    implements _$PasswordFailureCopyWith<$Res> {
-  __$PasswordFailureCopyWithImpl(this._self, this._then);
+class _$SignInPasswordFailureCopyWithImpl<$Res>
+    implements $SignInPasswordFailureCopyWith<$Res> {
+  _$SignInPasswordFailureCopyWithImpl(this._self, this._then);
 
-  final _PasswordFailure _self;
-  final $Res Function(_PasswordFailure) _then;
+  final SignInPasswordFailure _self;
+  final $Res Function(SignInPasswordFailure) _then;
 
   /// Create a copy of SignInFailure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? passwordFailure = null,
+    Object? passwordFailure = freezed,
   }) {
-    return _then(_PasswordFailure(
-      null == passwordFailure
+    return _then(SignInPasswordFailure(
+      freezed == passwordFailure
           ? _self.passwordFailure
           : passwordFailure // ignore: cast_nullable_to_non_nullable
               as PasswordFailure,
     ));
   }
-
-  /// Create a copy of SignInFailure
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PasswordFailureCopyWith<$Res> get passwordFailure {
-    return $PasswordFailureCopyWith<$Res>(_self.passwordFailure, (value) {
-      return _then(_self.copyWith(passwordFailure: value));
-    });
-  }
 }
 
 /// @nodoc
 
-class _UserIsDisabled extends SignInFailure {
-  const _UserIsDisabled() : super._();
+class UserIsDisabled extends SignInFailure {
+  const UserIsDisabled() : super._();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _UserIsDisabled);
+        (other.runtimeType == runtimeType && other is UserIsDisabled);
   }
 
   @override

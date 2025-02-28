@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:dart_either/dart_either.dart';
 import 'package:form_handling/form_handling.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -7,7 +7,7 @@ import '../domain/sign_in_failure.dart';
 part 'sign_in_notifier.freezed.dart';
 
 @freezed
-class SignInFormFields with _$SignInFormFields, FormFieldsMixin {
+sealed class SignInFormFields with _$SignInFormFields, FormFieldsMixin {
   const SignInFormFields._();
   const factory SignInFormFields({
     required StringFieldObject email,
@@ -16,8 +16,14 @@ class SignInFormFields with _$SignInFormFields, FormFieldsMixin {
 
   factory SignInFormFields.generate() {
     return SignInFormFields(
-      email: StringFieldObject.email(),
-      password: StringFieldObject.password(),
+      email: StringFieldObject.generate(
+        value: null,
+        validator: TextValidator.email(),
+      ),
+      password: StringFieldObject.generate(
+        value: null,
+        validator: TextValidator.password(),
+      ),
     );
   }
 
@@ -41,11 +47,11 @@ class SignInNotifier extends FormNotifier<SignInFormFields, SignInFailure> {
     //   fields.password.value,
     // );
 
-    final failureOrUnit = right(unit);
+    final failureOrUnit = Right<SignInFailure, void>(null);
 
     state = failureOrUnit.fold(
-      (l) => CustomFormState.failure(l, fields: fields),
-      (r) => CustomFormState.success(fields: fields),
+      ifLeft: (l) => CustomFormState.failure(l, fields: fields),
+      ifRight: (_) => CustomFormState.success(fields: fields),
     );
   }
 }

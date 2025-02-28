@@ -3,7 +3,7 @@ import 'package:form_handling/form_handling.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
-    Key? key,
+    super.key,
     this.labelText,
     this.icon,
     this.obscureText = false,
@@ -12,7 +12,7 @@ class CustomTextField extends StatelessWidget {
     this.keyboardType,
     this.textInputAction,
     required this.fieldObject,
-  }) : super(key: key);
+  });
   final String? labelText;
   final bool obscureText;
   final Icon? icon;
@@ -41,7 +41,15 @@ class CustomTextField extends StatelessWidget {
       onChanged: fieldObject.setValue,
       initialValue: fieldObject.initialValue,
       obscureText: obscureText,
-      validator: errorMessage == null ? fieldObject.validator : null,
+      validator: errorMessage == null 
+          ? (value) {
+              final failure = fieldObject.validator(value);
+              if (failure != null) {
+                return failure.toString();
+              }
+              return null;
+            }
+          : null,
     );
   }
 

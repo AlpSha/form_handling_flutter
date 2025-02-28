@@ -38,13 +38,13 @@ class $PasswordFailureCopyWith<$Res> {
 
 /// @nodoc
 
-class _WrongPassword extends PasswordFailure {
-  const _WrongPassword() : super._();
+class WrongPassword extends PasswordFailure {
+  const WrongPassword() : super._();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _WrongPassword);
+        (other.runtimeType == runtimeType && other is WrongPassword);
   }
 
   @override
@@ -58,8 +58,8 @@ class _WrongPassword extends PasswordFailure {
 
 /// @nodoc
 
-class _WeakPassword extends PasswordFailure {
-  const _WeakPassword([this.message]) : super._();
+class WeakPassword extends PasswordFailure {
+  const WeakPassword([this.message]) : super._();
 
   final String? message;
 
@@ -67,14 +67,14 @@ class _WeakPassword extends PasswordFailure {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$WeakPasswordCopyWith<_WeakPassword> get copyWith =>
-      __$WeakPasswordCopyWithImpl<_WeakPassword>(this, _$identity);
+  $WeakPasswordCopyWith<WeakPassword> get copyWith =>
+      _$WeakPasswordCopyWithImpl<WeakPassword>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _WeakPassword &&
+            other is WeakPassword &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -88,22 +88,21 @@ class _WeakPassword extends PasswordFailure {
 }
 
 /// @nodoc
-abstract mixin class _$WeakPasswordCopyWith<$Res>
+abstract mixin class $WeakPasswordCopyWith<$Res>
     implements $PasswordFailureCopyWith<$Res> {
-  factory _$WeakPasswordCopyWith(
-          _WeakPassword value, $Res Function(_WeakPassword) _then) =
-      __$WeakPasswordCopyWithImpl;
+  factory $WeakPasswordCopyWith(
+          WeakPassword value, $Res Function(WeakPassword) _then) =
+      _$WeakPasswordCopyWithImpl;
   @useResult
   $Res call({String? message});
 }
 
 /// @nodoc
-class __$WeakPasswordCopyWithImpl<$Res>
-    implements _$WeakPasswordCopyWith<$Res> {
-  __$WeakPasswordCopyWithImpl(this._self, this._then);
+class _$WeakPasswordCopyWithImpl<$Res> implements $WeakPasswordCopyWith<$Res> {
+  _$WeakPasswordCopyWithImpl(this._self, this._then);
 
-  final _WeakPassword _self;
-  final $Res Function(_WeakPassword) _then;
+  final WeakPassword _self;
+  final $Res Function(WeakPassword) _then;
 
   /// Create a copy of PasswordFailure
   /// with the given fields replaced by the non-null parameter values.
@@ -111,7 +110,7 @@ class __$WeakPasswordCopyWithImpl<$Res>
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_WeakPassword(
+    return _then(WeakPassword(
       freezed == message
           ? _self.message
           : message // ignore: cast_nullable_to_non_nullable
