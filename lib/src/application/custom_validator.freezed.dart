@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,102 +10,92 @@ part of 'custom_validator.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ValidationResult<V, F> {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(V value) success,
-    required TResult Function(F failure) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(V value)? success,
-    TResult? Function(F failure)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(V value)? success,
-    TResult Function(F failure)? failure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Success<V, F> value) success,
-    required TResult Function(_Failure<V, F> value) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Success<V, F> value)? success,
-    TResult? Function(_Failure<V, F> value)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Success<V, F> value)? success,
-    TResult Function(_Failure<V, F> value)? failure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ValidationResult<V, F>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'ValidationResult<$V, $F>()';
+  }
 }
 
 /// @nodoc
-abstract class $ValidationResultCopyWith<V, F, $Res> {
-  factory $ValidationResultCopyWith(ValidationResult<V, F> value,
-          $Res Function(ValidationResult<V, F>) then) =
-      _$ValidationResultCopyWithImpl<V, F, $Res, ValidationResult<V, F>>;
+class $ValidationResultCopyWith<V, F, $Res> {
+  $ValidationResultCopyWith(
+      ValidationResult<V, F> _, $Res Function(ValidationResult<V, F>) __);
 }
 
 /// @nodoc
-class _$ValidationResultCopyWithImpl<V, F, $Res,
-        $Val extends ValidationResult<V, F>>
-    implements $ValidationResultCopyWith<V, F, $Res> {
-  _$ValidationResultCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+class ValidationSuccess<V, F> extends ValidationResult<V, F> {
+  const ValidationSuccess(this.value) : super._();
+
+  final V value;
 
   /// Create a copy of ValidationResult
   /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ValidationSuccessCopyWith<V, F, ValidationSuccess<V, F>> get copyWith =>
+      _$ValidationSuccessCopyWithImpl<V, F, ValidationSuccess<V, F>>(
+          this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ValidationSuccess<V, F> &&
+            const DeepCollectionEquality().equals(other.value, value));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
+
+  @override
+  String toString() {
+    return 'ValidationResult<$V, $F>.success(value: $value)';
+  }
 }
 
 /// @nodoc
-abstract class _$$SuccessImplCopyWith<V, F, $Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl<V, F> value, $Res Function(_$SuccessImpl<V, F>) then) =
-      __$$SuccessImplCopyWithImpl<V, F, $Res>;
+abstract mixin class $ValidationSuccessCopyWith<V, F, $Res>
+    implements $ValidationResultCopyWith<V, F, $Res> {
+  factory $ValidationSuccessCopyWith(ValidationSuccess<V, F> value,
+          $Res Function(ValidationSuccess<V, F>) _then) =
+      _$ValidationSuccessCopyWithImpl;
   @useResult
   $Res call({V value});
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<V, F, $Res>
-    extends _$ValidationResultCopyWithImpl<V, F, $Res, _$SuccessImpl<V, F>>
-    implements _$$SuccessImplCopyWith<V, F, $Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl<V, F> _value, $Res Function(_$SuccessImpl<V, F>) _then)
-      : super(_value, _then);
+class _$ValidationSuccessCopyWithImpl<V, F, $Res>
+    implements $ValidationSuccessCopyWith<V, F, $Res> {
+  _$ValidationSuccessCopyWithImpl(this._self, this._then);
+
+  final ValidationSuccess<V, F> _self;
+  final $Res Function(ValidationSuccess<V, F>) _then;
 
   /// Create a copy of ValidationResult
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? value = freezed,
   }) {
-    return _then(_$SuccessImpl<V, F>(
+    return _then(ValidationSuccess<V, F>(
       freezed == value
-          ? _value.value
+          ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as V,
     ));
@@ -113,164 +104,24 @@ class __$$SuccessImplCopyWithImpl<V, F, $Res>
 
 /// @nodoc
 
-class _$SuccessImpl<V, F> extends _Success<V, F> {
-  const _$SuccessImpl(this.value) : super._();
+class ValidationFailure<V, F> extends ValidationResult<V, F> {
+  const ValidationFailure(this.failure) : super._();
 
-  @override
-  final V value;
-
-  @override
-  String toString() {
-    return 'ValidationResult<$V, $F>.success(value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl<V, F> &&
-            const DeepCollectionEquality().equals(other.value, value));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
-
-  /// Create a copy of ValidationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<V, F, _$SuccessImpl<V, F>> get copyWith =>
-      __$$SuccessImplCopyWithImpl<V, F, _$SuccessImpl<V, F>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(V value) success,
-    required TResult Function(F failure) failure,
-  }) {
-    return success(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(V value)? success,
-    TResult? Function(F failure)? failure,
-  }) {
-    return success?.call(value);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(V value)? success,
-    TResult Function(F failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(value);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Success<V, F> value) success,
-    required TResult Function(_Failure<V, F> value) failure,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Success<V, F> value)? success,
-    TResult? Function(_Failure<V, F> value)? failure,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Success<V, F> value)? success,
-    TResult Function(_Failure<V, F> value)? failure,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Success<V, F> extends ValidationResult<V, F> {
-  const factory _Success(final V value) = _$SuccessImpl<V, F>;
-  const _Success._() : super._();
-
-  V get value;
-
-  /// Create a copy of ValidationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuccessImplCopyWith<V, F, _$SuccessImpl<V, F>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$FailureImplCopyWith<V, F, $Res> {
-  factory _$$FailureImplCopyWith(
-          _$FailureImpl<V, F> value, $Res Function(_$FailureImpl<V, F>) then) =
-      __$$FailureImplCopyWithImpl<V, F, $Res>;
-  @useResult
-  $Res call({F failure});
-}
-
-/// @nodoc
-class __$$FailureImplCopyWithImpl<V, F, $Res>
-    extends _$ValidationResultCopyWithImpl<V, F, $Res, _$FailureImpl<V, F>>
-    implements _$$FailureImplCopyWith<V, F, $Res> {
-  __$$FailureImplCopyWithImpl(
-      _$FailureImpl<V, F> _value, $Res Function(_$FailureImpl<V, F>) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ValidationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failure = freezed,
-  }) {
-    return _then(_$FailureImpl<V, F>(
-      freezed == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as F,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$FailureImpl<V, F> extends _Failure<V, F> {
-  const _$FailureImpl(this.failure) : super._();
-
-  @override
   final F failure;
 
-  @override
-  String toString() {
-    return 'ValidationResult<$V, $F>.failure(failure: $failure)';
-  }
+  /// Create a copy of ValidationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ValidationFailureCopyWith<V, F, ValidationFailure<V, F>> get copyWith =>
+      _$ValidationFailureCopyWithImpl<V, F, ValidationFailure<V, F>>(
+          this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FailureImpl<V, F> &&
+            other is ValidationFailure<V, F> &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
@@ -278,86 +129,43 @@ class _$FailureImpl<V, F> extends _Failure<V, F> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
+  @override
+  String toString() {
+    return 'ValidationResult<$V, $F>.failure(failure: $failure)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ValidationFailureCopyWith<V, F, $Res>
+    implements $ValidationResultCopyWith<V, F, $Res> {
+  factory $ValidationFailureCopyWith(ValidationFailure<V, F> value,
+          $Res Function(ValidationFailure<V, F>) _then) =
+      _$ValidationFailureCopyWithImpl;
+  @useResult
+  $Res call({F failure});
+}
+
+/// @nodoc
+class _$ValidationFailureCopyWithImpl<V, F, $Res>
+    implements $ValidationFailureCopyWith<V, F, $Res> {
+  _$ValidationFailureCopyWithImpl(this._self, this._then);
+
+  final ValidationFailure<V, F> _self;
+  final $Res Function(ValidationFailure<V, F>) _then;
+
   /// Create a copy of ValidationResult
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
   @pragma('vm:prefer-inline')
-  _$$FailureImplCopyWith<V, F, _$FailureImpl<V, F>> get copyWith =>
-      __$$FailureImplCopyWithImpl<V, F, _$FailureImpl<V, F>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(V value) success,
-    required TResult Function(F failure) failure,
+  $Res call({
+    Object? failure = freezed,
   }) {
-    return failure(this.failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(V value)? success,
-    TResult? Function(F failure)? failure,
-  }) {
-    return failure?.call(this.failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(V value)? success,
-    TResult Function(F failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this.failure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Success<V, F> value) success,
-    required TResult Function(_Failure<V, F> value) failure,
-  }) {
-    return failure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Success<V, F> value)? success,
-    TResult? Function(_Failure<V, F> value)? failure,
-  }) {
-    return failure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Success<V, F> value)? success,
-    TResult Function(_Failure<V, F> value)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this);
-    }
-    return orElse();
+    return _then(ValidationFailure<V, F>(
+      freezed == failure
+          ? _self.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as F,
+    ));
   }
 }
 
-abstract class _Failure<V, F> extends ValidationResult<V, F> {
-  const factory _Failure(final F failure) = _$FailureImpl<V, F>;
-  const _Failure._() : super._();
-
-  F get failure;
-
-  /// Create a copy of ValidationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FailureImplCopyWith<V, F, _$FailureImpl<V, F>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

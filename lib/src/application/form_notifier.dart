@@ -6,34 +6,34 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'form_notifier.freezed.dart';
 
 @freezed
-class CustomFormState<V extends FormFieldsMixin, F> with _$CustomFormState<V, F> {
+sealed class CustomFormState<V extends FormFieldsMixin, F> with _$CustomFormState<V, F> {
   const CustomFormState._();
   const factory CustomFormState.initial({
     @Default(false) bool isFormSent,
     @Default(false) bool isFormValid,
     required V fields,
-  }) = _Initial<V, F>;
+  }) = InitialFormState<V, F>;
   const factory CustomFormState.inProgress({
     @Default(true) bool isFormSent,
     @Default(true) bool isFormValid,
     required V fields,
-  }) = _InProgress<V, F>;
+  }) = InProgressFormState<V, F>;
   const factory CustomFormState.formIsEdited({
     required bool isFormSent,
     required bool isFormValid,
     required V fields,
-  }) = _FormIsEdited<V, F>;
+  }) = FormIsEditedFormState<V, F>;
   const factory CustomFormState.failure(
     F failure, {
     @Default(true) bool isFormSent,
     @Default(true) bool isFormValid,
     required V fields,
-  }) = _Failure<V, F>;
+  }) = FailureFormState<V, F>;
   const factory CustomFormState.success({
     @Default(true) bool isFormSent,
     @Default(true) bool isFormValid,
     required V fields,
-  }) = _Success<V, F>;
+  }) = SuccessFormState<V, F>;
 }
 
 abstract class FormNotifier<V extends FormFieldsMixin, F> extends StateNotifier<CustomFormState<V, F>> with FormMixin {

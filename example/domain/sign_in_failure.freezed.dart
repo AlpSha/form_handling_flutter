@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,113 +10,87 @@ part of 'sign_in_failure.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SignInFailure {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String? message) service,
-    required TResult Function(EmailSignInFailure emailFailure) emailFailure,
-    required TResult Function(PasswordFailure passwordFailure) passwordFailure,
-    required TResult Function() userIsDisabled,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? message)? service,
-    TResult? Function(EmailSignInFailure emailFailure)? emailFailure,
-    TResult? Function(PasswordFailure passwordFailure)? passwordFailure,
-    TResult? Function()? userIsDisabled,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? service,
-    TResult Function(EmailSignInFailure emailFailure)? emailFailure,
-    TResult Function(PasswordFailure passwordFailure)? passwordFailure,
-    TResult Function()? userIsDisabled,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Service value) service,
-    required TResult Function(_EmailFailure value) emailFailure,
-    required TResult Function(_PasswordFailure value) passwordFailure,
-    required TResult Function(_UserIsDisabled value) userIsDisabled,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Service value)? service,
-    TResult? Function(_EmailFailure value)? emailFailure,
-    TResult? Function(_PasswordFailure value)? passwordFailure,
-    TResult? Function(_UserIsDisabled value)? userIsDisabled,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Service value)? service,
-    TResult Function(_EmailFailure value)? emailFailure,
-    TResult Function(_PasswordFailure value)? passwordFailure,
-    TResult Function(_UserIsDisabled value)? userIsDisabled,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SignInFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'SignInFailure()';
+  }
 }
 
 /// @nodoc
-abstract class $SignInFailureCopyWith<$Res> {
-  factory $SignInFailureCopyWith(
-          SignInFailure value, $Res Function(SignInFailure) then) =
-      _$SignInFailureCopyWithImpl<$Res, SignInFailure>;
+class $SignInFailureCopyWith<$Res> {
+  $SignInFailureCopyWith(SignInFailure _, $Res Function(SignInFailure) __);
 }
 
 /// @nodoc
-class _$SignInFailureCopyWithImpl<$Res, $Val extends SignInFailure>
-    implements $SignInFailureCopyWith<$Res> {
-  _$SignInFailureCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+class _Service extends SignInFailure {
+  const _Service([this.message]) : super._();
+
+  final String? message;
 
   /// Create a copy of SignInFailure
   /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ServiceCopyWith<_Service> get copyWith =>
+      __$ServiceCopyWithImpl<_Service>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Service &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @override
+  String toString() {
+    return 'SignInFailure.service(message: $message)';
+  }
 }
 
 /// @nodoc
-abstract class _$$ServiceImplCopyWith<$Res> {
-  factory _$$ServiceImplCopyWith(
-          _$ServiceImpl value, $Res Function(_$ServiceImpl) then) =
-      __$$ServiceImplCopyWithImpl<$Res>;
+abstract mixin class _$ServiceCopyWith<$Res>
+    implements $SignInFailureCopyWith<$Res> {
+  factory _$ServiceCopyWith(_Service value, $Res Function(_Service) _then) =
+      __$ServiceCopyWithImpl;
   @useResult
   $Res call({String? message});
 }
 
 /// @nodoc
-class __$$ServiceImplCopyWithImpl<$Res>
-    extends _$SignInFailureCopyWithImpl<$Res, _$ServiceImpl>
-    implements _$$ServiceImplCopyWith<$Res> {
-  __$$ServiceImplCopyWithImpl(
-      _$ServiceImpl _value, $Res Function(_$ServiceImpl) _then)
-      : super(_value, _then);
+class __$ServiceCopyWithImpl<$Res> implements _$ServiceCopyWith<$Res> {
+  __$ServiceCopyWithImpl(this._self, this._then);
+
+  final _Service _self;
+  final $Res Function(_Service) _then;
 
   /// Create a copy of SignInFailure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_$ServiceImpl(
+    return _then(_Service(
       freezed == message
-          ? _value.message
+          ? _self.message
           : message // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -124,129 +99,42 @@ class __$$ServiceImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ServiceImpl extends _Service {
-  const _$ServiceImpl([this.message]) : super._();
+class _EmailFailure extends SignInFailure {
+  const _EmailFailure(this.emailFailure) : super._();
 
-  @override
-  final String? message;
+  final EmailSignInFailure emailFailure;
 
-  @override
-  String toString() {
-    return 'SignInFailure.service(message: $message)';
-  }
+  /// Create a copy of SignInFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$EmailFailureCopyWith<_EmailFailure> get copyWith =>
+      __$EmailFailureCopyWithImpl<_EmailFailure>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ServiceImpl &&
-            (identical(other.message, message) || other.message == message));
+            other is _EmailFailure &&
+            (identical(other.emailFailure, emailFailure) ||
+                other.emailFailure == emailFailure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  /// Create a copy of SignInFailure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ServiceImplCopyWith<_$ServiceImpl> get copyWith =>
-      __$$ServiceImplCopyWithImpl<_$ServiceImpl>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, emailFailure);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String? message) service,
-    required TResult Function(EmailSignInFailure emailFailure) emailFailure,
-    required TResult Function(PasswordFailure passwordFailure) passwordFailure,
-    required TResult Function() userIsDisabled,
-  }) {
-    return service(message);
+  String toString() {
+    return 'SignInFailure.emailFailure(emailFailure: $emailFailure)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? message)? service,
-    TResult? Function(EmailSignInFailure emailFailure)? emailFailure,
-    TResult? Function(PasswordFailure passwordFailure)? passwordFailure,
-    TResult? Function()? userIsDisabled,
-  }) {
-    return service?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? service,
-    TResult Function(EmailSignInFailure emailFailure)? emailFailure,
-    TResult Function(PasswordFailure passwordFailure)? passwordFailure,
-    TResult Function()? userIsDisabled,
-    required TResult orElse(),
-  }) {
-    if (service != null) {
-      return service(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Service value) service,
-    required TResult Function(_EmailFailure value) emailFailure,
-    required TResult Function(_PasswordFailure value) passwordFailure,
-    required TResult Function(_UserIsDisabled value) userIsDisabled,
-  }) {
-    return service(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Service value)? service,
-    TResult? Function(_EmailFailure value)? emailFailure,
-    TResult? Function(_PasswordFailure value)? passwordFailure,
-    TResult? Function(_UserIsDisabled value)? userIsDisabled,
-  }) {
-    return service?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Service value)? service,
-    TResult Function(_EmailFailure value)? emailFailure,
-    TResult Function(_PasswordFailure value)? passwordFailure,
-    TResult Function(_UserIsDisabled value)? userIsDisabled,
-    required TResult orElse(),
-  }) {
-    if (service != null) {
-      return service(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Service extends SignInFailure {
-  const factory _Service([final String? message]) = _$ServiceImpl;
-  const _Service._() : super._();
-
-  String? get message;
-
-  /// Create a copy of SignInFailure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ServiceImplCopyWith<_$ServiceImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$EmailFailureImplCopyWith<$Res> {
-  factory _$$EmailFailureImplCopyWith(
-          _$EmailFailureImpl value, $Res Function(_$EmailFailureImpl) then) =
-      __$$EmailFailureImplCopyWithImpl<$Res>;
+abstract mixin class _$EmailFailureCopyWith<$Res>
+    implements $SignInFailureCopyWith<$Res> {
+  factory _$EmailFailureCopyWith(
+          _EmailFailure value, $Res Function(_EmailFailure) _then) =
+      __$EmailFailureCopyWithImpl;
   @useResult
   $Res call({EmailSignInFailure emailFailure});
 
@@ -254,23 +142,22 @@ abstract class _$$EmailFailureImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$EmailFailureImplCopyWithImpl<$Res>
-    extends _$SignInFailureCopyWithImpl<$Res, _$EmailFailureImpl>
-    implements _$$EmailFailureImplCopyWith<$Res> {
-  __$$EmailFailureImplCopyWithImpl(
-      _$EmailFailureImpl _value, $Res Function(_$EmailFailureImpl) _then)
-      : super(_value, _then);
+class __$EmailFailureCopyWithImpl<$Res>
+    implements _$EmailFailureCopyWith<$Res> {
+  __$EmailFailureCopyWithImpl(this._self, this._then);
+
+  final _EmailFailure _self;
+  final $Res Function(_EmailFailure) _then;
 
   /// Create a copy of SignInFailure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? emailFailure = null,
   }) {
-    return _then(_$EmailFailureImpl(
+    return _then(_EmailFailure(
       null == emailFailure
-          ? _value.emailFailure
+          ? _self.emailFailure
           : emailFailure // ignore: cast_nullable_to_non_nullable
               as EmailSignInFailure,
     ));
@@ -281,139 +168,50 @@ class __$$EmailFailureImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $EmailSignInFailureCopyWith<$Res> get emailFailure {
-    return $EmailSignInFailureCopyWith<$Res>(_value.emailFailure, (value) {
-      return _then(_value.copyWith(emailFailure: value));
+    return $EmailSignInFailureCopyWith<$Res>(_self.emailFailure, (value) {
+      return _then(_self.copyWith(emailFailure: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$EmailFailureImpl extends _EmailFailure {
-  const _$EmailFailureImpl(this.emailFailure) : super._();
+class _PasswordFailure extends SignInFailure {
+  const _PasswordFailure(this.passwordFailure) : super._();
 
-  @override
-  final EmailSignInFailure emailFailure;
+  final PasswordFailure passwordFailure;
 
-  @override
-  String toString() {
-    return 'SignInFailure.emailFailure(emailFailure: $emailFailure)';
-  }
+  /// Create a copy of SignInFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PasswordFailureCopyWith<_PasswordFailure> get copyWith =>
+      __$PasswordFailureCopyWithImpl<_PasswordFailure>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EmailFailureImpl &&
-            (identical(other.emailFailure, emailFailure) ||
-                other.emailFailure == emailFailure));
+            other is _PasswordFailure &&
+            (identical(other.passwordFailure, passwordFailure) ||
+                other.passwordFailure == passwordFailure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, emailFailure);
-
-  /// Create a copy of SignInFailure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EmailFailureImplCopyWith<_$EmailFailureImpl> get copyWith =>
-      __$$EmailFailureImplCopyWithImpl<_$EmailFailureImpl>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, passwordFailure);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String? message) service,
-    required TResult Function(EmailSignInFailure emailFailure) emailFailure,
-    required TResult Function(PasswordFailure passwordFailure) passwordFailure,
-    required TResult Function() userIsDisabled,
-  }) {
-    return emailFailure(this.emailFailure);
+  String toString() {
+    return 'SignInFailure.passwordFailure(passwordFailure: $passwordFailure)';
   }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? message)? service,
-    TResult? Function(EmailSignInFailure emailFailure)? emailFailure,
-    TResult? Function(PasswordFailure passwordFailure)? passwordFailure,
-    TResult? Function()? userIsDisabled,
-  }) {
-    return emailFailure?.call(this.emailFailure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? service,
-    TResult Function(EmailSignInFailure emailFailure)? emailFailure,
-    TResult Function(PasswordFailure passwordFailure)? passwordFailure,
-    TResult Function()? userIsDisabled,
-    required TResult orElse(),
-  }) {
-    if (emailFailure != null) {
-      return emailFailure(this.emailFailure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Service value) service,
-    required TResult Function(_EmailFailure value) emailFailure,
-    required TResult Function(_PasswordFailure value) passwordFailure,
-    required TResult Function(_UserIsDisabled value) userIsDisabled,
-  }) {
-    return emailFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Service value)? service,
-    TResult? Function(_EmailFailure value)? emailFailure,
-    TResult? Function(_PasswordFailure value)? passwordFailure,
-    TResult? Function(_UserIsDisabled value)? userIsDisabled,
-  }) {
-    return emailFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Service value)? service,
-    TResult Function(_EmailFailure value)? emailFailure,
-    TResult Function(_PasswordFailure value)? passwordFailure,
-    TResult Function(_UserIsDisabled value)? userIsDisabled,
-    required TResult orElse(),
-  }) {
-    if (emailFailure != null) {
-      return emailFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _EmailFailure extends SignInFailure {
-  const factory _EmailFailure(final EmailSignInFailure emailFailure) =
-      _$EmailFailureImpl;
-  const _EmailFailure._() : super._();
-
-  EmailSignInFailure get emailFailure;
-
-  /// Create a copy of SignInFailure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EmailFailureImplCopyWith<_$EmailFailureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$PasswordFailureImplCopyWith<$Res> {
-  factory _$$PasswordFailureImplCopyWith(_$PasswordFailureImpl value,
-          $Res Function(_$PasswordFailureImpl) then) =
-      __$$PasswordFailureImplCopyWithImpl<$Res>;
+abstract mixin class _$PasswordFailureCopyWith<$Res>
+    implements $SignInFailureCopyWith<$Res> {
+  factory _$PasswordFailureCopyWith(
+          _PasswordFailure value, $Res Function(_PasswordFailure) _then) =
+      __$PasswordFailureCopyWithImpl;
   @useResult
   $Res call({PasswordFailure passwordFailure});
 
@@ -421,23 +219,22 @@ abstract class _$$PasswordFailureImplCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PasswordFailureImplCopyWithImpl<$Res>
-    extends _$SignInFailureCopyWithImpl<$Res, _$PasswordFailureImpl>
-    implements _$$PasswordFailureImplCopyWith<$Res> {
-  __$$PasswordFailureImplCopyWithImpl(
-      _$PasswordFailureImpl _value, $Res Function(_$PasswordFailureImpl) _then)
-      : super(_value, _then);
+class __$PasswordFailureCopyWithImpl<$Res>
+    implements _$PasswordFailureCopyWith<$Res> {
+  __$PasswordFailureCopyWithImpl(this._self, this._then);
+
+  final _PasswordFailure _self;
+  final $Res Function(_PasswordFailure) _then;
 
   /// Create a copy of SignInFailure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? passwordFailure = null,
   }) {
-    return _then(_$PasswordFailureImpl(
+    return _then(_PasswordFailure(
       null == passwordFailure
-          ? _value.passwordFailure
+          ? _self.passwordFailure
           : passwordFailure // ignore: cast_nullable_to_non_nullable
               as PasswordFailure,
     ));
@@ -448,249 +245,30 @@ class __$$PasswordFailureImplCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $PasswordFailureCopyWith<$Res> get passwordFailure {
-    return $PasswordFailureCopyWith<$Res>(_value.passwordFailure, (value) {
-      return _then(_value.copyWith(passwordFailure: value));
+    return $PasswordFailureCopyWith<$Res>(_self.passwordFailure, (value) {
+      return _then(_self.copyWith(passwordFailure: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$PasswordFailureImpl extends _PasswordFailure {
-  const _$PasswordFailureImpl(this.passwordFailure) : super._();
-
-  @override
-  final PasswordFailure passwordFailure;
-
-  @override
-  String toString() {
-    return 'SignInFailure.passwordFailure(passwordFailure: $passwordFailure)';
-  }
+class _UserIsDisabled extends SignInFailure {
+  const _UserIsDisabled() : super._();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PasswordFailureImpl &&
-            (identical(other.passwordFailure, passwordFailure) ||
-                other.passwordFailure == passwordFailure));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, passwordFailure);
-
-  /// Create a copy of SignInFailure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PasswordFailureImplCopyWith<_$PasswordFailureImpl> get copyWith =>
-      __$$PasswordFailureImplCopyWithImpl<_$PasswordFailureImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String? message) service,
-    required TResult Function(EmailSignInFailure emailFailure) emailFailure,
-    required TResult Function(PasswordFailure passwordFailure) passwordFailure,
-    required TResult Function() userIsDisabled,
-  }) {
-    return passwordFailure(this.passwordFailure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? message)? service,
-    TResult? Function(EmailSignInFailure emailFailure)? emailFailure,
-    TResult? Function(PasswordFailure passwordFailure)? passwordFailure,
-    TResult? Function()? userIsDisabled,
-  }) {
-    return passwordFailure?.call(this.passwordFailure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? service,
-    TResult Function(EmailSignInFailure emailFailure)? emailFailure,
-    TResult Function(PasswordFailure passwordFailure)? passwordFailure,
-    TResult Function()? userIsDisabled,
-    required TResult orElse(),
-  }) {
-    if (passwordFailure != null) {
-      return passwordFailure(this.passwordFailure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Service value) service,
-    required TResult Function(_EmailFailure value) emailFailure,
-    required TResult Function(_PasswordFailure value) passwordFailure,
-    required TResult Function(_UserIsDisabled value) userIsDisabled,
-  }) {
-    return passwordFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Service value)? service,
-    TResult? Function(_EmailFailure value)? emailFailure,
-    TResult? Function(_PasswordFailure value)? passwordFailure,
-    TResult? Function(_UserIsDisabled value)? userIsDisabled,
-  }) {
-    return passwordFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Service value)? service,
-    TResult Function(_EmailFailure value)? emailFailure,
-    TResult Function(_PasswordFailure value)? passwordFailure,
-    TResult Function(_UserIsDisabled value)? userIsDisabled,
-    required TResult orElse(),
-  }) {
-    if (passwordFailure != null) {
-      return passwordFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PasswordFailure extends SignInFailure {
-  const factory _PasswordFailure(final PasswordFailure passwordFailure) =
-      _$PasswordFailureImpl;
-  const _PasswordFailure._() : super._();
-
-  PasswordFailure get passwordFailure;
-
-  /// Create a copy of SignInFailure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PasswordFailureImplCopyWith<_$PasswordFailureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$UserIsDisabledImplCopyWith<$Res> {
-  factory _$$UserIsDisabledImplCopyWith(_$UserIsDisabledImpl value,
-          $Res Function(_$UserIsDisabledImpl) then) =
-      __$$UserIsDisabledImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$UserIsDisabledImplCopyWithImpl<$Res>
-    extends _$SignInFailureCopyWithImpl<$Res, _$UserIsDisabledImpl>
-    implements _$$UserIsDisabledImplCopyWith<$Res> {
-  __$$UserIsDisabledImplCopyWithImpl(
-      _$UserIsDisabledImpl _value, $Res Function(_$UserIsDisabledImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SignInFailure
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$UserIsDisabledImpl extends _UserIsDisabled {
-  const _$UserIsDisabledImpl() : super._();
-
-  @override
-  String toString() {
-    return 'SignInFailure.userIsDisabled()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UserIsDisabledImpl);
+        (other.runtimeType == runtimeType && other is _UserIsDisabled);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String? message) service,
-    required TResult Function(EmailSignInFailure emailFailure) emailFailure,
-    required TResult Function(PasswordFailure passwordFailure) passwordFailure,
-    required TResult Function() userIsDisabled,
-  }) {
-    return userIsDisabled();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String? message)? service,
-    TResult? Function(EmailSignInFailure emailFailure)? emailFailure,
-    TResult? Function(PasswordFailure passwordFailure)? passwordFailure,
-    TResult? Function()? userIsDisabled,
-  }) {
-    return userIsDisabled?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? service,
-    TResult Function(EmailSignInFailure emailFailure)? emailFailure,
-    TResult Function(PasswordFailure passwordFailure)? passwordFailure,
-    TResult Function()? userIsDisabled,
-    required TResult orElse(),
-  }) {
-    if (userIsDisabled != null) {
-      return userIsDisabled();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Service value) service,
-    required TResult Function(_EmailFailure value) emailFailure,
-    required TResult Function(_PasswordFailure value) passwordFailure,
-    required TResult Function(_UserIsDisabled value) userIsDisabled,
-  }) {
-    return userIsDisabled(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Service value)? service,
-    TResult? Function(_EmailFailure value)? emailFailure,
-    TResult? Function(_PasswordFailure value)? passwordFailure,
-    TResult? Function(_UserIsDisabled value)? userIsDisabled,
-  }) {
-    return userIsDisabled?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Service value)? service,
-    TResult Function(_EmailFailure value)? emailFailure,
-    TResult Function(_PasswordFailure value)? passwordFailure,
-    TResult Function(_UserIsDisabled value)? userIsDisabled,
-    required TResult orElse(),
-  }) {
-    if (userIsDisabled != null) {
-      return userIsDisabled(this);
-    }
-    return orElse();
+  String toString() {
+    return 'SignInFailure.userIsDisabled()';
   }
 }
 
-abstract class _UserIsDisabled extends SignInFailure {
-  const factory _UserIsDisabled() = _$UserIsDisabledImpl;
-  const _UserIsDisabled._() : super._();
-}
+// dart format on

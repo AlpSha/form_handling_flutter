@@ -132,10 +132,10 @@ class FormFieldObject<V, F> {
   })  : _validatorObject = validator,
         initialValue = value {
     final validationResult = validator.validateAndGetResult(value);
-    final valueObject = validationResult.map(
-      success: (_) => ValueObject<V, F>.valid(value: value),
-      failure: (_) => ValueObject<V, F>.initial(value: value),
-    );
+    final valueObject = switch (validationResult) {
+      ValidationSuccess(value: final value) => ValueObject<V, F>.valid(value: value),
+      ValidationFailure(failure: final failure) => ValueObject<V, F>.failure(value: value, failure: failure),
+    };
     _valueObject = valueObject;
   }
 
@@ -152,15 +152,15 @@ class FormFieldObject<V, F> {
 
   void setValue(V? value) {
     final result = _validatorObject.validateAndGetResult(value);
-    _valueObject = result.when(
-      success: (_) => ValueObject.valid(
-        value: _,
-      ),
-      failure: (_) => ValueObject.failure(
-        value: value ?? initialValue,
-        failure: _,
-      ),
-    );
+    _valueObject = switch (result) {
+      ValidationSuccess(value: final value) => ValueObject.valid(
+          value: value,
+        ),
+      ValidationFailure(failure: final failure) => ValueObject.failure(
+          value: value ?? initialValue,
+          failure: failure,
+        ),
+    };
     notifyOwner();
   }
 
@@ -170,10 +170,11 @@ class FormFieldObject<V, F> {
 
   // If object is in initial state, this method moves it onto other states. So it shows failures or success value
   bool validate() {
-    _valueObject.maybeWhen(
-      initial: (_) => setValue(_),
-      orElse: () {},
-    );
+    switch (_valueObject) {
+      case InitialValue(value: final value):
+        setValue(value);
+      default:
+    }
     return isValid;
   }
 
@@ -186,28 +187,29 @@ class FormFieldObject<V, F> {
 // If you are providing a valid value at initial, then use valid constructor instead of initial
 // Initial state won't be accepted as valid even though it doesn't contain any failure
 @freezed
-class ValueObject<V, F> with _$ValueObject<V, F> {
+sealed class ValueObject<V, F> with _$ValueObject<V, F> {
   const ValueObject._();
   const factory ValueObject.initial({
     required V value,
-  }) = _InitialValue<V, F>;
+  }) = InitialValue<V, F>;
   const factory ValueObject.valid({
     required V value,
-  }) = _Valid<V, F>;
+  }) = ValidValue<V, F>;
   const factory ValueObject.failure({
     required V value,
     required F failure,
-  }) = _Failure<V, F>;
+  }) = FailureValue<V, F>;
 }
 
 extension ValueObjectX on ValueObject {
-  bool get isValid => maybeMap(
-        valid: (_) => true,
-        orElse: () => false,
-      );
+  bool get isValid => switch (this) {
+        ValidValue() => true,
+        FailureValue() => false,
+        InitialValue() => false,
+      };
 
-  bool get isInitial => maybeMap(
-        initial: (_) => true,
-        orElse: () => false,
-      );
+  bool get isInitial => switch (this) {
+        InitialValue() => true,
+        _ => false,
+      };
 }

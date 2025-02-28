@@ -15,16 +15,16 @@ abstract class CustomValidator<V, F> {
 
   F? validator(V? value) {
     final result = validateAndGetResult(value);
-    return result.when(
-      failure: (_) => _,
-      success: (_) => null,
-    );
+    return switch (result) {
+      ValidationFailure(failure: final failure) => failure,
+      ValidationSuccess(value: final _) => null,
+    };
   }
 }
 
 @freezed
-class ValidationResult<V, F> with _$ValidationResult<V, F> {
+sealed class ValidationResult<V, F> with _$ValidationResult<V, F> {
   const ValidationResult._();
-  const factory ValidationResult.success(V value) = _Success<V, F>;
-  const factory ValidationResult.failure(F failure) = _Failure<V, F>;
+  const factory ValidationResult.success(V value) = ValidationSuccess<V, F>;
+  const factory ValidationResult.failure(F failure) = ValidationFailure<V, F>;
 }
