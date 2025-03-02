@@ -151,8 +151,8 @@ class FormFieldObject<V, F> {
     final validationResult = validator.validateAndGetResult(value);
     final valueObject = switch (validationResult) {
       ValidationSuccess(value: final value) => ValueObject<V, F>.valid(value: value),
-      ValidationFailure(failure: final failure) =>
-        ValueObject<V, F>.failure(value: value, failure: failure),
+      // We don't set failure here otherwise it will show error without any modification
+      ValidationFailure() => ValueObject<V, F>.initial(value: value),
     };
     _valueObject = valueObject;
   }
@@ -221,9 +221,8 @@ sealed class ValueObject<V, F> with _$ValueObject<V, F> {
 
 extension ValueObjectX on ValueObject {
   bool get isValid => switch (this) {
-        ValidValue() => true,
         FailureValue() => false,
-        InitialValue() => false,
+        _ => true,
       };
 
   bool get isInitial => switch (this) {
