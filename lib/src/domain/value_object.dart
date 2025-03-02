@@ -109,9 +109,9 @@ class StringFieldObject extends FormFieldObject<String?, TextInputFailure> {
   String? get valueAsNullIfEmpty => value == '' ? null : value;
 }
 
-class MultiSelectFieldObject<T> extends FormFieldObject<Set<T>?, MultiselectInputFailure> {
+class MultiSelectFieldObject<T> extends FormFieldObject<Iterable<T>?, MultiselectInputFailure> {
   MultiSelectFieldObject.generate({
-    required Set<T>? value,
+    required Iterable<T>? value,
     required bool isRequired,
     int? minToSelect,
     int? maxToSelect,

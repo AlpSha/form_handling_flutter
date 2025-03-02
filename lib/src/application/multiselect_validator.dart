@@ -1,6 +1,6 @@
 import 'package:form_handling/form_handling.dart';
 
-class MultiSelectValidator<T> extends CustomValidator<Set<T>?, MultiselectInputFailure> {
+class MultiSelectValidator<T> extends CustomValidator<Iterable<T>?, MultiselectInputFailure> {
   MultiSelectValidator({
     required super.isRequired,
     this.minToSelect,
@@ -11,8 +11,8 @@ class MultiSelectValidator<T> extends CustomValidator<Set<T>?, MultiselectInputF
   final int? maxToSelect;
 
   @override
-  ValidationResult<Set<T>?, MultiselectInputFailure> validateAndGetResult(
-    Set<T>? value,
+  ValidationResult<Iterable<T>?, MultiselectInputFailure> validateAndGetResult(
+    Iterable<T>? value,
   ) {
     if (value == null || value.isEmpty) {
       if (!isRequired) {
