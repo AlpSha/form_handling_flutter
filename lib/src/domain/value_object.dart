@@ -2,6 +2,7 @@ import 'package:form_handling/src/application/bool_validator.dart';
 import 'package:form_handling/src/application/custom_validator.dart';
 import 'package:form_handling/src/application/date_validator.dart';
 import 'package:form_handling/src/application/dropdown_validator.dart';
+import 'package:form_handling/src/application/duration_validator.dart';
 import 'package:form_handling/src/application/form_notifier.dart';
 import 'package:form_handling/src/application/image_validator.dart';
 import 'package:form_handling/src/application/multiselect_validator.dart';
@@ -125,6 +126,22 @@ class MultiSelectFieldObject<T> extends FormFieldObject<Iterable<T>?, Multiselec
         );
 }
 
+class DurationFieldObject extends FormFieldObject<Duration?, DurationInputFailure> {
+  DurationFieldObject.generate({
+    required Duration? value,
+    required bool isRequired,
+    Duration? min,
+    Duration? max,
+  }) : super.generate(
+          validator: DurationValidator(
+            isRequired: isRequired,
+            min: min,
+            max: max,
+          ),
+          value: value,
+        );
+}
+
 class FormFieldObject<V, F> {
   FormFieldObject.generate({
     required CustomValidator<V, F> validator,
@@ -134,7 +151,8 @@ class FormFieldObject<V, F> {
     final validationResult = validator.validateAndGetResult(value);
     final valueObject = switch (validationResult) {
       ValidationSuccess(value: final value) => ValueObject<V, F>.valid(value: value),
-      ValidationFailure(failure: final failure) => ValueObject<V, F>.failure(value: value, failure: failure),
+      ValidationFailure(failure: final failure) =>
+        ValueObject<V, F>.failure(value: value, failure: failure),
     };
     _valueObject = valueObject;
   }

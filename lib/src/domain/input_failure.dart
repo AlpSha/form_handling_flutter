@@ -60,3 +60,10 @@ sealed class MultiselectInputFailure with _$MultiselectInputFailure {
   const factory MultiselectInputFailure.minNotReached(min) = MultiSelectMinNotReachedInputFailure;
   const factory MultiselectInputFailure.notSelected() = MultiSelectNotSelectedInputFailure;
 }
+
+@freezed
+sealed class DurationInputFailure with _$DurationInputFailure {
+  const factory DurationInputFailure.notSelected() = DurationNotSelectedInputFailure;
+  const factory DurationInputFailure.tooShort(Duration min) = DurationTooShortInputFailure;
+  const factory DurationInputFailure.tooLong(Duration max) = DurationTooLongInputFailure;
+}
