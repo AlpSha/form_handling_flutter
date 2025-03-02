@@ -1095,4 +1095,180 @@ class MultiSelectNotSelectedInputFailure implements MultiselectInputFailure {
   }
 }
 
+/// @nodoc
+mixin _$DurationInputFailure {
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is DurationInputFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'DurationInputFailure()';
+  }
+}
+
+/// @nodoc
+class $DurationInputFailureCopyWith<$Res> {
+  $DurationInputFailureCopyWith(
+      DurationInputFailure _, $Res Function(DurationInputFailure) __);
+}
+
+/// @nodoc
+
+class DurationNotSelectedInputFailure implements DurationInputFailure {
+  const DurationNotSelectedInputFailure();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DurationNotSelectedInputFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'DurationInputFailure.notSelected()';
+  }
+}
+
+/// @nodoc
+
+class DurationTooShortInputFailure implements DurationInputFailure {
+  const DurationTooShortInputFailure(this.min);
+
+  final Duration min;
+
+  /// Create a copy of DurationInputFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $DurationTooShortInputFailureCopyWith<DurationTooShortInputFailure>
+      get copyWith => _$DurationTooShortInputFailureCopyWithImpl<
+          DurationTooShortInputFailure>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DurationTooShortInputFailure &&
+            (identical(other.min, min) || other.min == min));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, min);
+
+  @override
+  String toString() {
+    return 'DurationInputFailure.tooShort(min: $min)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $DurationTooShortInputFailureCopyWith<$Res>
+    implements $DurationInputFailureCopyWith<$Res> {
+  factory $DurationTooShortInputFailureCopyWith(
+          DurationTooShortInputFailure value,
+          $Res Function(DurationTooShortInputFailure) _then) =
+      _$DurationTooShortInputFailureCopyWithImpl;
+  @useResult
+  $Res call({Duration min});
+}
+
+/// @nodoc
+class _$DurationTooShortInputFailureCopyWithImpl<$Res>
+    implements $DurationTooShortInputFailureCopyWith<$Res> {
+  _$DurationTooShortInputFailureCopyWithImpl(this._self, this._then);
+
+  final DurationTooShortInputFailure _self;
+  final $Res Function(DurationTooShortInputFailure) _then;
+
+  /// Create a copy of DurationInputFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? min = null,
+  }) {
+    return _then(DurationTooShortInputFailure(
+      null == min
+          ? _self.min
+          : min // ignore: cast_nullable_to_non_nullable
+              as Duration,
+    ));
+  }
+}
+
+/// @nodoc
+
+class DurationTooLongInputFailure implements DurationInputFailure {
+  const DurationTooLongInputFailure(this.max);
+
+  final Duration max;
+
+  /// Create a copy of DurationInputFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $DurationTooLongInputFailureCopyWith<DurationTooLongInputFailure>
+      get copyWith => _$DurationTooLongInputFailureCopyWithImpl<
+          DurationTooLongInputFailure>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DurationTooLongInputFailure &&
+            (identical(other.max, max) || other.max == max));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, max);
+
+  @override
+  String toString() {
+    return 'DurationInputFailure.tooLong(max: $max)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $DurationTooLongInputFailureCopyWith<$Res>
+    implements $DurationInputFailureCopyWith<$Res> {
+  factory $DurationTooLongInputFailureCopyWith(
+          DurationTooLongInputFailure value,
+          $Res Function(DurationTooLongInputFailure) _then) =
+      _$DurationTooLongInputFailureCopyWithImpl;
+  @useResult
+  $Res call({Duration max});
+}
+
+/// @nodoc
+class _$DurationTooLongInputFailureCopyWithImpl<$Res>
+    implements $DurationTooLongInputFailureCopyWith<$Res> {
+  _$DurationTooLongInputFailureCopyWithImpl(this._self, this._then);
+
+  final DurationTooLongInputFailure _self;
+  final $Res Function(DurationTooLongInputFailure) _then;
+
+  /// Create a copy of DurationInputFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? max = null,
+  }) {
+    return _then(DurationTooLongInputFailure(
+      null == max
+          ? _self.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as Duration,
+    ));
+  }
+}
+
 // dart format on

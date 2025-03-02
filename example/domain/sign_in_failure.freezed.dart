@@ -195,13 +195,12 @@ class SignInPasswordFailure extends SignInFailure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is SignInPasswordFailure &&
-            const DeepCollectionEquality()
-                .equals(other.passwordFailure, passwordFailure));
+            (identical(other.passwordFailure, passwordFailure) ||
+                other.passwordFailure == passwordFailure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(passwordFailure));
+  int get hashCode => Object.hash(runtimeType, passwordFailure);
 
   @override
   String toString() {
@@ -217,6 +216,8 @@ abstract mixin class $SignInPasswordFailureCopyWith<$Res>
       _$SignInPasswordFailureCopyWithImpl;
   @useResult
   $Res call({PasswordFailure passwordFailure});
+
+  $PasswordFailureCopyWith<$Res> get passwordFailure;
 }
 
 /// @nodoc
@@ -231,14 +232,24 @@ class _$SignInPasswordFailureCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? passwordFailure = freezed,
+    Object? passwordFailure = null,
   }) {
     return _then(SignInPasswordFailure(
-      freezed == passwordFailure
+      null == passwordFailure
           ? _self.passwordFailure
           : passwordFailure // ignore: cast_nullable_to_non_nullable
               as PasswordFailure,
     ));
+  }
+
+  /// Create a copy of SignInFailure
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PasswordFailureCopyWith<$Res> get passwordFailure {
+    return $PasswordFailureCopyWith<$Res>(_self.passwordFailure, (value) {
+      return _then(_self.copyWith(passwordFailure: value));
+    });
   }
 }
 
