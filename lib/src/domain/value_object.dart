@@ -125,7 +125,7 @@ class MultiSelectFieldObject<T> extends FormFieldObject<Set<T>?, MultiselectInpu
         );
 }
 
-class FormFieldObject<V, F> {
+sealed class FormFieldObject<V, F> {
   FormFieldObject.generate({
     required CustomValidator<V, F> validator,
     required V value,
