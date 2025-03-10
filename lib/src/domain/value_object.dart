@@ -142,7 +142,7 @@ class DurationFieldObject extends FormFieldObject<Duration?, DurationInputFailur
         );
 }
 
-class FormFieldObject<V, F> {
+sealed class FormFieldObject<V, F> {
   FormFieldObject.generate({
     required CustomValidator<V, F> validator,
     required V value,
