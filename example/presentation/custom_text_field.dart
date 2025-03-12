@@ -12,6 +12,7 @@ class CustomTextField extends StatelessWidget {
     this.keyboardType,
     this.textInputAction,
     required this.fieldObject,
+    required this.errorMessageBuilder,
   }) : super(key: key);
   final String? labelText;
   final bool obscureText;
@@ -20,6 +21,7 @@ class CustomTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
   final StringFieldObject fieldObject;
+  final String? Function(String? failure) errorMessageBuilder;
 
   /// Do not provide [errorMessage] unless you wish to override
   /// the message comes from validator of [fieldObject]
@@ -41,12 +43,13 @@ class CustomTextField extends StatelessWidget {
       onChanged: fieldObject.setValue,
       initialValue: fieldObject.initialValue,
       obscureText: obscureText,
-      validator: errorMessage == null ? fieldObject.validator : null,
+      validator: (value) => errorMessage == null ? errorMessageBuilder(value) : errorMessage,
     );
   }
 
   factory CustomTextField.email({
     required StringFieldObject fieldObject,
+    required String? Function(String? failure) errorMessageBuilder,
     String? errorMessage,
   }) =>
       CustomTextField(
@@ -56,10 +59,12 @@ class CustomTextField extends StatelessWidget {
         textInputAction: TextInputAction.next,
         fieldObject: fieldObject,
         errorMessage: errorMessage,
+        errorMessageBuilder: errorMessageBuilder,
       );
 
   factory CustomTextField.password({
     required StringFieldObject fieldObject,
+    required String? Function(String? failure) errorMessageBuilder,
     String? errorMessage,
   }) =>
       CustomTextField(
@@ -69,5 +74,6 @@ class CustomTextField extends StatelessWidget {
         obscureText: true,
         fieldObject: fieldObject,
         errorMessage: errorMessage,
+        errorMessageBuilder: errorMessageBuilder,
       );
 }

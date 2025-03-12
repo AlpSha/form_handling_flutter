@@ -16,8 +16,14 @@ class SignInFormFields with _$SignInFormFields, FormFieldsMixin {
 
   factory SignInFormFields.generate() {
     return SignInFormFields(
-      email: StringFieldObject.email(),
-      password: StringFieldObject.password(),
+      email: StringFieldObject.generate(
+        value: null,
+        validator: TextValidator.email(),
+      ),
+      password: StringFieldObject.generate(
+        value: null,
+        validator: TextValidator.password(),
+      ),
     );
   }
 
