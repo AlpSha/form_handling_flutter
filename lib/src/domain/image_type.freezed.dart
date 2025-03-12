@@ -162,4 +162,75 @@ class _$UrlImageTypeCopyWithImpl<$Res> implements $UrlImageTypeCopyWith<$Res> {
   }
 }
 
+/// @nodoc
+
+class _WebBytes implements ImageType {
+  const _WebBytes(this.bytes, this.mimeType);
+
+  final Uint8List bytes;
+  final String mimeType;
+
+  /// Create a copy of ImageType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$WebBytesCopyWith<_WebBytes> get copyWith =>
+      __$WebBytesCopyWithImpl<_WebBytes>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _WebBytes &&
+            const DeepCollectionEquality().equals(other.bytes, bytes) &&
+            (identical(other.mimeType, mimeType) ||
+                other.mimeType == mimeType));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(bytes), mimeType);
+
+  @override
+  String toString() {
+    return 'ImageType.webBytes(bytes: $bytes, mimeType: $mimeType)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$WebBytesCopyWith<$Res>
+    implements $ImageTypeCopyWith<$Res> {
+  factory _$WebBytesCopyWith(_WebBytes value, $Res Function(_WebBytes) _then) =
+      __$WebBytesCopyWithImpl;
+  @useResult
+  $Res call({Uint8List bytes, String mimeType});
+}
+
+/// @nodoc
+class __$WebBytesCopyWithImpl<$Res> implements _$WebBytesCopyWith<$Res> {
+  __$WebBytesCopyWithImpl(this._self, this._then);
+
+  final _WebBytes _self;
+  final $Res Function(_WebBytes) _then;
+
+  /// Create a copy of ImageType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? bytes = null,
+    Object? mimeType = null,
+  }) {
+    return _then(_WebBytes(
+      null == bytes
+          ? _self.bytes
+          : bytes // ignore: cast_nullable_to_non_nullable
+              as Uint8List,
+      null == mimeType
+          ? _self.mimeType
+          : mimeType // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
 // dart format on
