@@ -20,18 +20,21 @@ mixin _$ImageType {
   TResult when<TResult extends Object?>({
     required TResult Function(String path) file,
     required TResult Function(String url) network,
+    required TResult Function(Uint8List bytes, String mimeType) webBytes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String path)? file,
     TResult? Function(String url)? network,
+    TResult? Function(Uint8List bytes, String mimeType)? webBytes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String path)? file,
     TResult Function(String url)? network,
+    TResult Function(Uint8List bytes, String mimeType)? webBytes,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$ImageType {
   TResult map<TResult extends Object?>({
     required TResult Function(_File value) file,
     required TResult Function(_Url value) network,
+    required TResult Function(_WebBytes value) webBytes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_File value)? file,
     TResult? Function(_Url value)? network,
+    TResult? Function(_WebBytes value)? webBytes,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_File value)? file,
     TResult Function(_Url value)? network,
+    TResult Function(_WebBytes value)? webBytes,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -145,6 +151,7 @@ class _$FileImpl implements _File {
   TResult when<TResult extends Object?>({
     required TResult Function(String path) file,
     required TResult Function(String url) network,
+    required TResult Function(Uint8List bytes, String mimeType) webBytes,
   }) {
     return file(path);
   }
@@ -154,6 +161,7 @@ class _$FileImpl implements _File {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String path)? file,
     TResult? Function(String url)? network,
+    TResult? Function(Uint8List bytes, String mimeType)? webBytes,
   }) {
     return file?.call(path);
   }
@@ -163,6 +171,7 @@ class _$FileImpl implements _File {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String path)? file,
     TResult Function(String url)? network,
+    TResult Function(Uint8List bytes, String mimeType)? webBytes,
     required TResult orElse(),
   }) {
     if (file != null) {
@@ -176,6 +185,7 @@ class _$FileImpl implements _File {
   TResult map<TResult extends Object?>({
     required TResult Function(_File value) file,
     required TResult Function(_Url value) network,
+    required TResult Function(_WebBytes value) webBytes,
   }) {
     return file(this);
   }
@@ -185,6 +195,7 @@ class _$FileImpl implements _File {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_File value)? file,
     TResult? Function(_Url value)? network,
+    TResult? Function(_WebBytes value)? webBytes,
   }) {
     return file?.call(this);
   }
@@ -194,6 +205,7 @@ class _$FileImpl implements _File {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_File value)? file,
     TResult Function(_Url value)? network,
+    TResult Function(_WebBytes value)? webBytes,
     required TResult orElse(),
   }) {
     if (file != null) {
@@ -283,6 +295,7 @@ class _$UrlImpl implements _Url {
   TResult when<TResult extends Object?>({
     required TResult Function(String path) file,
     required TResult Function(String url) network,
+    required TResult Function(Uint8List bytes, String mimeType) webBytes,
   }) {
     return network(url);
   }
@@ -292,6 +305,7 @@ class _$UrlImpl implements _Url {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String path)? file,
     TResult? Function(String url)? network,
+    TResult? Function(Uint8List bytes, String mimeType)? webBytes,
   }) {
     return network?.call(url);
   }
@@ -301,6 +315,7 @@ class _$UrlImpl implements _Url {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String path)? file,
     TResult Function(String url)? network,
+    TResult Function(Uint8List bytes, String mimeType)? webBytes,
     required TResult orElse(),
   }) {
     if (network != null) {
@@ -314,6 +329,7 @@ class _$UrlImpl implements _Url {
   TResult map<TResult extends Object?>({
     required TResult Function(_File value) file,
     required TResult Function(_Url value) network,
+    required TResult Function(_WebBytes value) webBytes,
   }) {
     return network(this);
   }
@@ -323,6 +339,7 @@ class _$UrlImpl implements _Url {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_File value)? file,
     TResult? Function(_Url value)? network,
+    TResult? Function(_WebBytes value)? webBytes,
   }) {
     return network?.call(this);
   }
@@ -332,6 +349,7 @@ class _$UrlImpl implements _Url {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_File value)? file,
     TResult Function(_Url value)? network,
+    TResult Function(_WebBytes value)? webBytes,
     required TResult orElse(),
   }) {
     if (network != null) {
@@ -350,5 +368,163 @@ abstract class _Url implements ImageType {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UrlImplCopyWith<_$UrlImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$WebBytesImplCopyWith<$Res> {
+  factory _$$WebBytesImplCopyWith(
+          _$WebBytesImpl value, $Res Function(_$WebBytesImpl) then) =
+      __$$WebBytesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Uint8List bytes, String mimeType});
+}
+
+/// @nodoc
+class __$$WebBytesImplCopyWithImpl<$Res>
+    extends _$ImageTypeCopyWithImpl<$Res, _$WebBytesImpl>
+    implements _$$WebBytesImplCopyWith<$Res> {
+  __$$WebBytesImplCopyWithImpl(
+      _$WebBytesImpl _value, $Res Function(_$WebBytesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ImageType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? bytes = null,
+    Object? mimeType = null,
+  }) {
+    return _then(_$WebBytesImpl(
+      null == bytes
+          ? _value.bytes
+          : bytes // ignore: cast_nullable_to_non_nullable
+              as Uint8List,
+      null == mimeType
+          ? _value.mimeType
+          : mimeType // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$WebBytesImpl implements _WebBytes {
+  const _$WebBytesImpl(this.bytes, this.mimeType);
+
+  @override
+  final Uint8List bytes;
+  @override
+  final String mimeType;
+
+  @override
+  String toString() {
+    return 'ImageType.webBytes(bytes: $bytes, mimeType: $mimeType)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WebBytesImpl &&
+            const DeepCollectionEquality().equals(other.bytes, bytes) &&
+            (identical(other.mimeType, mimeType) ||
+                other.mimeType == mimeType));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(bytes), mimeType);
+
+  /// Create a copy of ImageType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$WebBytesImplCopyWith<_$WebBytesImpl> get copyWith =>
+      __$$WebBytesImplCopyWithImpl<_$WebBytesImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String path) file,
+    required TResult Function(String url) network,
+    required TResult Function(Uint8List bytes, String mimeType) webBytes,
+  }) {
+    return webBytes(bytes, mimeType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String path)? file,
+    TResult? Function(String url)? network,
+    TResult? Function(Uint8List bytes, String mimeType)? webBytes,
+  }) {
+    return webBytes?.call(bytes, mimeType);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String path)? file,
+    TResult Function(String url)? network,
+    TResult Function(Uint8List bytes, String mimeType)? webBytes,
+    required TResult orElse(),
+  }) {
+    if (webBytes != null) {
+      return webBytes(bytes, mimeType);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_File value) file,
+    required TResult Function(_Url value) network,
+    required TResult Function(_WebBytes value) webBytes,
+  }) {
+    return webBytes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_File value)? file,
+    TResult? Function(_Url value)? network,
+    TResult? Function(_WebBytes value)? webBytes,
+  }) {
+    return webBytes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_File value)? file,
+    TResult Function(_Url value)? network,
+    TResult Function(_WebBytes value)? webBytes,
+    required TResult orElse(),
+  }) {
+    if (webBytes != null) {
+      return webBytes(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _WebBytes implements ImageType {
+  const factory _WebBytes(final Uint8List bytes, final String mimeType) =
+      _$WebBytesImpl;
+
+  Uint8List get bytes;
+  String get mimeType;
+
+  /// Create a copy of ImageType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$WebBytesImplCopyWith<_$WebBytesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

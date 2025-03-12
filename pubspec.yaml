@@ -1,6 +1,6 @@
 name: form_handling
 description: A starting point for Dart libraries or applications.
-version: 1.0.14
+version: 1.0.15
 
 environment:
   sdk: "^3.6.1"
