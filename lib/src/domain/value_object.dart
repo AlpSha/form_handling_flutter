@@ -157,7 +157,7 @@ sealed class FormFieldObject<V, F> {
         value: _,
       ),
       failure: (_) => ValueObject.failure(
-        value: value ?? initialValue,
+        value: value,
         failure: _,
       ),
     );
