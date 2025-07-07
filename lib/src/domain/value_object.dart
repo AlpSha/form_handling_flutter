@@ -26,6 +26,7 @@ class DropdownFieldObject<T> extends FormFieldObject<T?, DropdownInputFailure> {
             isRequired: isRequired,
           ),
           value: value,
+          emptyValue: null,
         );
 }
 
@@ -42,6 +43,7 @@ class IntFieldObject extends FormFieldObject<int?, IntInputFailure> {
             isRequired: isRequired,
           ),
           value: value,
+          emptyValue: null,
         );
 }
 
@@ -58,18 +60,21 @@ class DoubleFieldObject extends FormFieldObject<double?, DoubleInputFailure> {
             min: min,
           ),
           value: value,
+          emptyValue: null,
         );
 }
 
 class BoolFieldObject extends FormFieldObject<bool, BoolInputFailure> {
   BoolFieldObject.generate({
     required bool value,
+    bool emptyValue = false,
     bool needsToBeTrue = false,
   }) : super.generate(
           validator: BoolValidator(
             needsToBeTrue: needsToBeTrue,
           ),
           value: value,
+          emptyValue: emptyValue,
         );
 }
 
@@ -82,6 +87,7 @@ class DateFieldObject extends FormFieldObject<DateTime?, DateTimeInputFailure> {
             isRequired: isRequired,
           ),
           value: value,
+          emptyValue: null,
         );
 }
 
@@ -94,6 +100,7 @@ class ImageFieldObject extends FormFieldObject<ImageType?, ImageInputFailure> {
             isRequired: isRequired,
           ),
           value: value,
+          emptyValue: null,
         );
 }
 
@@ -104,12 +111,14 @@ class StringFieldObject extends FormFieldObject<String?, TextInputFailure> {
   }) : super.generate(
           validator: validator,
           value: value,
+          emptyValue: '',
         );
 
   String? get valueAsNullIfEmpty => value == '' ? null : value;
 }
 
-class MultiSelectFieldObject<T> extends FormFieldObject<Set<T>?, MultiselectInputFailure> {
+class MultiSelectFieldObject<T>
+    extends FormFieldObject<Set<T>?, MultiselectInputFailure> {
   MultiSelectFieldObject.generate({
     required Set<T>? value,
     required bool isRequired,
@@ -121,6 +130,7 @@ class MultiSelectFieldObject<T> extends FormFieldObject<Set<T>?, MultiselectInpu
             minToSelect: minToSelect,
             maxToSelect: maxToSelect,
           ),
+          emptyValue: {},
           value: value,
         );
 }
@@ -129,6 +139,7 @@ sealed class FormFieldObject<V, F> {
   FormFieldObject.generate({
     required CustomValidator<V, F> validator,
     required V value,
+    required this.emptyValue,
   })  : _validatorObject = validator,
         initialValue = value {
     final validationResult = validator.validateAndGetResult(value);
@@ -142,6 +153,7 @@ sealed class FormFieldObject<V, F> {
   FormMixin? owner;
   final CustomValidator<V, F> _validatorObject;
   final V initialValue;
+  final V emptyValue;
   late ValueObject<V, F> _valueObject;
 
   ValueObject<V, F> get valueObject => _valueObject;
@@ -157,7 +169,7 @@ sealed class FormFieldObject<V, F> {
         value: _,
       ),
       failure: (_) => ValueObject.failure(
-        value: value,
+        value: value ?? emptyValue,
         failure: _,
       ),
     );
