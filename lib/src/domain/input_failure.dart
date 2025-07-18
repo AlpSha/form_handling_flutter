@@ -60,3 +60,11 @@ class MultiselectInputFailure with _$MultiselectInputFailure {
   const factory MultiselectInputFailure.minNotReached(min) = _MultiSelectMinNotReached;
   const factory MultiselectInputFailure.notSelected() = _MultiSelectNotSelected;
 }
+
+@freezed
+class FileInputFailure with _$FileInputFailure {
+  const factory FileInputFailure.fileNotExists() = _FileDoesNotExist;
+  const factory FileInputFailure.empty() = _EmptyFile;
+  const factory FileInputFailure.invalidExtension() = _InvalidExtension;
+  const factory FileInputFailure.fileTooLarge() = _FileTooLarge;
+}

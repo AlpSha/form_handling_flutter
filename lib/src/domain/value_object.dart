@@ -2,6 +2,7 @@ import 'package:form_handling/src/application/bool_validator.dart';
 import 'package:form_handling/src/application/custom_validator.dart';
 import 'package:form_handling/src/application/date_validator.dart';
 import 'package:form_handling/src/application/dropdown_validator.dart';
+import 'package:form_handling/src/application/file_validator.dart';
 import 'package:form_handling/src/application/form_notifier.dart';
 import 'package:form_handling/src/application/image_validator.dart';
 import 'package:form_handling/src/application/multiselect_validator.dart';
@@ -98,6 +99,23 @@ class ImageFieldObject extends FormFieldObject<ImageType?, ImageInputFailure> {
   }) : super.generate(
           validator: ImageValidator(
             isRequired: isRequired,
+          ),
+          value: value,
+          emptyValue: null,
+        );
+}
+
+class FileFieldObject extends FormFieldObject<String?, FileInputFailure> {
+  FileFieldObject.generate({
+    required String? value,
+    required bool isRequired,
+    List<String>? allowedExtensions,
+    int? maxSizeInBytes,
+  }) : super.generate(
+          validator: FileValidator(
+            isRequired: isRequired,
+            allowedExtensions: allowedExtensions,
+            maxSizeInBytes: maxSizeInBytes,
           ),
           value: value,
           emptyValue: null,

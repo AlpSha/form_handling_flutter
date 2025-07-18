@@ -9,4 +9,5 @@ export 'src/application/date_validator.dart';
 export 'src/application/text_validator.dart';
 export 'src/application/number_validator.dart';
 export 'src/application/bool_validator.dart';
+export 'src/application/file_validator.dart';
 export 'src/application/form_notifier.dart';

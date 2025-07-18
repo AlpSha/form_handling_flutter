@@ -3412,3 +3412,546 @@ class _$MultiSelectNotSelectedImpl implements _MultiSelectNotSelected {
 abstract class _MultiSelectNotSelected implements MultiselectInputFailure {
   const factory _MultiSelectNotSelected() = _$MultiSelectNotSelectedImpl;
 }
+
+/// @nodoc
+mixin _$FileInputFailure {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fileNotExists,
+    required TResult Function() empty,
+    required TResult Function() invalidExtension,
+    required TResult Function() fileTooLarge,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fileNotExists,
+    TResult? Function()? empty,
+    TResult? Function()? invalidExtension,
+    TResult? Function()? fileTooLarge,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fileNotExists,
+    TResult Function()? empty,
+    TResult Function()? invalidExtension,
+    TResult Function()? fileTooLarge,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FileDoesNotExist value) fileNotExists,
+    required TResult Function(_EmptyFile value) empty,
+    required TResult Function(_InvalidExtension value) invalidExtension,
+    required TResult Function(_FileTooLarge value) fileTooLarge,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FileDoesNotExist value)? fileNotExists,
+    TResult? Function(_EmptyFile value)? empty,
+    TResult? Function(_InvalidExtension value)? invalidExtension,
+    TResult? Function(_FileTooLarge value)? fileTooLarge,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FileDoesNotExist value)? fileNotExists,
+    TResult Function(_EmptyFile value)? empty,
+    TResult Function(_InvalidExtension value)? invalidExtension,
+    TResult Function(_FileTooLarge value)? fileTooLarge,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FileInputFailureCopyWith<$Res> {
+  factory $FileInputFailureCopyWith(
+          FileInputFailure value, $Res Function(FileInputFailure) then) =
+      _$FileInputFailureCopyWithImpl<$Res, FileInputFailure>;
+}
+
+/// @nodoc
+class _$FileInputFailureCopyWithImpl<$Res, $Val extends FileInputFailure>
+    implements $FileInputFailureCopyWith<$Res> {
+  _$FileInputFailureCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of FileInputFailure
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$FileDoesNotExistImplCopyWith<$Res> {
+  factory _$$FileDoesNotExistImplCopyWith(_$FileDoesNotExistImpl value,
+          $Res Function(_$FileDoesNotExistImpl) then) =
+      __$$FileDoesNotExistImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FileDoesNotExistImplCopyWithImpl<$Res>
+    extends _$FileInputFailureCopyWithImpl<$Res, _$FileDoesNotExistImpl>
+    implements _$$FileDoesNotExistImplCopyWith<$Res> {
+  __$$FileDoesNotExistImplCopyWithImpl(_$FileDoesNotExistImpl _value,
+      $Res Function(_$FileDoesNotExistImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FileInputFailure
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$FileDoesNotExistImpl implements _FileDoesNotExist {
+  const _$FileDoesNotExistImpl();
+
+  @override
+  String toString() {
+    return 'FileInputFailure.fileNotExists()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FileDoesNotExistImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fileNotExists,
+    required TResult Function() empty,
+    required TResult Function() invalidExtension,
+    required TResult Function() fileTooLarge,
+  }) {
+    return fileNotExists();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fileNotExists,
+    TResult? Function()? empty,
+    TResult? Function()? invalidExtension,
+    TResult? Function()? fileTooLarge,
+  }) {
+    return fileNotExists?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fileNotExists,
+    TResult Function()? empty,
+    TResult Function()? invalidExtension,
+    TResult Function()? fileTooLarge,
+    required TResult orElse(),
+  }) {
+    if (fileNotExists != null) {
+      return fileNotExists();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FileDoesNotExist value) fileNotExists,
+    required TResult Function(_EmptyFile value) empty,
+    required TResult Function(_InvalidExtension value) invalidExtension,
+    required TResult Function(_FileTooLarge value) fileTooLarge,
+  }) {
+    return fileNotExists(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FileDoesNotExist value)? fileNotExists,
+    TResult? Function(_EmptyFile value)? empty,
+    TResult? Function(_InvalidExtension value)? invalidExtension,
+    TResult? Function(_FileTooLarge value)? fileTooLarge,
+  }) {
+    return fileNotExists?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FileDoesNotExist value)? fileNotExists,
+    TResult Function(_EmptyFile value)? empty,
+    TResult Function(_InvalidExtension value)? invalidExtension,
+    TResult Function(_FileTooLarge value)? fileTooLarge,
+    required TResult orElse(),
+  }) {
+    if (fileNotExists != null) {
+      return fileNotExists(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FileDoesNotExist implements FileInputFailure {
+  const factory _FileDoesNotExist() = _$FileDoesNotExistImpl;
+}
+
+/// @nodoc
+abstract class _$$EmptyFileImplCopyWith<$Res> {
+  factory _$$EmptyFileImplCopyWith(
+          _$EmptyFileImpl value, $Res Function(_$EmptyFileImpl) then) =
+      __$$EmptyFileImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$EmptyFileImplCopyWithImpl<$Res>
+    extends _$FileInputFailureCopyWithImpl<$Res, _$EmptyFileImpl>
+    implements _$$EmptyFileImplCopyWith<$Res> {
+  __$$EmptyFileImplCopyWithImpl(
+      _$EmptyFileImpl _value, $Res Function(_$EmptyFileImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FileInputFailure
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$EmptyFileImpl implements _EmptyFile {
+  const _$EmptyFileImpl();
+
+  @override
+  String toString() {
+    return 'FileInputFailure.empty()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$EmptyFileImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fileNotExists,
+    required TResult Function() empty,
+    required TResult Function() invalidExtension,
+    required TResult Function() fileTooLarge,
+  }) {
+    return empty();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fileNotExists,
+    TResult? Function()? empty,
+    TResult? Function()? invalidExtension,
+    TResult? Function()? fileTooLarge,
+  }) {
+    return empty?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fileNotExists,
+    TResult Function()? empty,
+    TResult Function()? invalidExtension,
+    TResult Function()? fileTooLarge,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FileDoesNotExist value) fileNotExists,
+    required TResult Function(_EmptyFile value) empty,
+    required TResult Function(_InvalidExtension value) invalidExtension,
+    required TResult Function(_FileTooLarge value) fileTooLarge,
+  }) {
+    return empty(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FileDoesNotExist value)? fileNotExists,
+    TResult? Function(_EmptyFile value)? empty,
+    TResult? Function(_InvalidExtension value)? invalidExtension,
+    TResult? Function(_FileTooLarge value)? fileTooLarge,
+  }) {
+    return empty?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FileDoesNotExist value)? fileNotExists,
+    TResult Function(_EmptyFile value)? empty,
+    TResult Function(_InvalidExtension value)? invalidExtension,
+    TResult Function(_FileTooLarge value)? fileTooLarge,
+    required TResult orElse(),
+  }) {
+    if (empty != null) {
+      return empty(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmptyFile implements FileInputFailure {
+  const factory _EmptyFile() = _$EmptyFileImpl;
+}
+
+/// @nodoc
+abstract class _$$InvalidExtensionImplCopyWith<$Res> {
+  factory _$$InvalidExtensionImplCopyWith(_$InvalidExtensionImpl value,
+          $Res Function(_$InvalidExtensionImpl) then) =
+      __$$InvalidExtensionImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$InvalidExtensionImplCopyWithImpl<$Res>
+    extends _$FileInputFailureCopyWithImpl<$Res, _$InvalidExtensionImpl>
+    implements _$$InvalidExtensionImplCopyWith<$Res> {
+  __$$InvalidExtensionImplCopyWithImpl(_$InvalidExtensionImpl _value,
+      $Res Function(_$InvalidExtensionImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FileInputFailure
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$InvalidExtensionImpl implements _InvalidExtension {
+  const _$InvalidExtensionImpl();
+
+  @override
+  String toString() {
+    return 'FileInputFailure.invalidExtension()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$InvalidExtensionImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fileNotExists,
+    required TResult Function() empty,
+    required TResult Function() invalidExtension,
+    required TResult Function() fileTooLarge,
+  }) {
+    return invalidExtension();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fileNotExists,
+    TResult? Function()? empty,
+    TResult? Function()? invalidExtension,
+    TResult? Function()? fileTooLarge,
+  }) {
+    return invalidExtension?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fileNotExists,
+    TResult Function()? empty,
+    TResult Function()? invalidExtension,
+    TResult Function()? fileTooLarge,
+    required TResult orElse(),
+  }) {
+    if (invalidExtension != null) {
+      return invalidExtension();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FileDoesNotExist value) fileNotExists,
+    required TResult Function(_EmptyFile value) empty,
+    required TResult Function(_InvalidExtension value) invalidExtension,
+    required TResult Function(_FileTooLarge value) fileTooLarge,
+  }) {
+    return invalidExtension(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FileDoesNotExist value)? fileNotExists,
+    TResult? Function(_EmptyFile value)? empty,
+    TResult? Function(_InvalidExtension value)? invalidExtension,
+    TResult? Function(_FileTooLarge value)? fileTooLarge,
+  }) {
+    return invalidExtension?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FileDoesNotExist value)? fileNotExists,
+    TResult Function(_EmptyFile value)? empty,
+    TResult Function(_InvalidExtension value)? invalidExtension,
+    TResult Function(_FileTooLarge value)? fileTooLarge,
+    required TResult orElse(),
+  }) {
+    if (invalidExtension != null) {
+      return invalidExtension(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InvalidExtension implements FileInputFailure {
+  const factory _InvalidExtension() = _$InvalidExtensionImpl;
+}
+
+/// @nodoc
+abstract class _$$FileTooLargeImplCopyWith<$Res> {
+  factory _$$FileTooLargeImplCopyWith(
+          _$FileTooLargeImpl value, $Res Function(_$FileTooLargeImpl) then) =
+      __$$FileTooLargeImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FileTooLargeImplCopyWithImpl<$Res>
+    extends _$FileInputFailureCopyWithImpl<$Res, _$FileTooLargeImpl>
+    implements _$$FileTooLargeImplCopyWith<$Res> {
+  __$$FileTooLargeImplCopyWithImpl(
+      _$FileTooLargeImpl _value, $Res Function(_$FileTooLargeImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FileInputFailure
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$FileTooLargeImpl implements _FileTooLarge {
+  const _$FileTooLargeImpl();
+
+  @override
+  String toString() {
+    return 'FileInputFailure.fileTooLarge()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FileTooLargeImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() fileNotExists,
+    required TResult Function() empty,
+    required TResult Function() invalidExtension,
+    required TResult Function() fileTooLarge,
+  }) {
+    return fileTooLarge();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? fileNotExists,
+    TResult? Function()? empty,
+    TResult? Function()? invalidExtension,
+    TResult? Function()? fileTooLarge,
+  }) {
+    return fileTooLarge?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? fileNotExists,
+    TResult Function()? empty,
+    TResult Function()? invalidExtension,
+    TResult Function()? fileTooLarge,
+    required TResult orElse(),
+  }) {
+    if (fileTooLarge != null) {
+      return fileTooLarge();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_FileDoesNotExist value) fileNotExists,
+    required TResult Function(_EmptyFile value) empty,
+    required TResult Function(_InvalidExtension value) invalidExtension,
+    required TResult Function(_FileTooLarge value) fileTooLarge,
+  }) {
+    return fileTooLarge(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_FileDoesNotExist value)? fileNotExists,
+    TResult? Function(_EmptyFile value)? empty,
+    TResult? Function(_InvalidExtension value)? invalidExtension,
+    TResult? Function(_FileTooLarge value)? fileTooLarge,
+  }) {
+    return fileTooLarge?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_FileDoesNotExist value)? fileNotExists,
+    TResult Function(_EmptyFile value)? empty,
+    TResult Function(_InvalidExtension value)? invalidExtension,
+    TResult Function(_FileTooLarge value)? fileTooLarge,
+    required TResult orElse(),
+  }) {
+    if (fileTooLarge != null) {
+      return fileTooLarge(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FileTooLarge implements FileInputFailure {
+  const factory _FileTooLarge() = _$FileTooLargeImpl;
+}
