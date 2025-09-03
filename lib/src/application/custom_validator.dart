@@ -16,7 +16,7 @@ abstract class CustomValidator<V, F> {
   F? validator(V? value) {
     final result = validateAndGetResult(value);
     return result.when(
-      failure: (_) => _,
+      failure: (f) => f,
       success: (_) => null,
     );
   }

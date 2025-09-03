@@ -183,12 +183,12 @@ sealed class FormFieldObject<V, F> {
   void setValue(V? value) {
     final result = _validatorObject.validateAndGetResult(value);
     _valueObject = result.when(
-      success: (_) => ValueObject.valid(
-        value: _,
+      success: (value) => ValueObject.valid(
+        value: value,
       ),
-      failure: (_) => ValueObject.failure(
+      failure: (failure) => ValueObject.failure(
         value: value ?? emptyValue,
-        failure: _,
+        failure: failure,
       ),
     );
     notifyOwner();
@@ -201,7 +201,7 @@ sealed class FormFieldObject<V, F> {
   // If object is in initial state, this method moves it onto other states. So it shows failures or success value
   bool validate() {
     _valueObject.maybeWhen(
-      initial: (_) => setValue(_),
+      initial: (value) => setValue(value),
       orElse: () {},
     );
     return isValid;
@@ -216,18 +216,18 @@ sealed class FormFieldObject<V, F> {
 // If you are providing a valid value at initial, then use valid constructor instead of initial
 // Initial state won't be accepted as valid even though it doesn't contain any failure
 @freezed
-class ValueObject<V, F> with _$ValueObject<V, F> {
+sealed class ValueObject<V, F> with _$ValueObject<V, F> {
   const ValueObject._();
   const factory ValueObject.initial({
     required V value,
-  }) = _InitialValue<V, F>;
+  }) = InitialValueObject<V, F>;
   const factory ValueObject.valid({
     required V value,
-  }) = _Valid<V, F>;
+  }) = ValidValueObject<V, F>;
   const factory ValueObject.failure({
     required V value,
     required F failure,
-  }) = _Failure<V, F>;
+  }) = FailureValueObject<V, F>;
 }
 
 extension ValueObjectX on ValueObject {

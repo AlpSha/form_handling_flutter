@@ -3,68 +3,68 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'input_failure.freezed.dart';
 
 @freezed
-class TextInputFailure with _$TextInputFailure {
+sealed class TextInputFailure with _$TextInputFailure {
   const TextInputFailure._();
-  const factory TextInputFailure.invalid() = _Invalid;
-  const factory TextInputFailure.tooShort(int minChars) = _TooShort;
-  const factory TextInputFailure.tooLong(int maxChars) = _TooLong;
-  const factory TextInputFailure.empty() = _Empty;
-  const factory TextInputFailure.notUnique() = _NotUnique;
+  const factory TextInputFailure.invalid() = InvalidTextInputFailure;
+  const factory TextInputFailure.tooShort(int minChars) = TooShortTextInputFailure;
+  const factory TextInputFailure.tooLong(int maxChars) = TooLongTextInputFailure;
+  const factory TextInputFailure.empty() = EmptyTextInputFailure;
+  const factory TextInputFailure.notUnique() = NotUniqueTextInputFailure;
 }
 
 @freezed
-class DateTimeInputFailure with _$DateTimeInputFailure {
+sealed class DateTimeInputFailure with _$DateTimeInputFailure {
   const DateTimeInputFailure._();
-  const factory DateTimeInputFailure.empty() = _EmptyDate;
-  const factory DateTimeInputFailure.beforeMin(DateTime min) = _BeforeMin;
-  const factory DateTimeInputFailure.afterMax(DateTime max) = _AfterMax;
+  const factory DateTimeInputFailure.empty() = EmptyDateTimeInputFailure;
+  const factory DateTimeInputFailure.beforeMin(DateTime min) = BeforeMinDateTimeInputFailure;
+  const factory DateTimeInputFailure.afterMax(DateTime max) = AfterMaxDateTimeInputFailure;
 }
 
 @freezed
-class IntInputFailure with _$IntInputFailure {
+sealed class IntInputFailure with _$IntInputFailure {
   const IntInputFailure._();
-  const factory IntInputFailure.tooSmall(int min) = _TooSmall;
-  const factory IntInputFailure.tooBig(int max) = _TooBig;
-  const factory IntInputFailure.empty() = _EmptyNumber;
+  const factory IntInputFailure.tooSmall(int min) = TooSmallIntInputFailure;
+  const factory IntInputFailure.tooBig(int max) = TooBigIntInputFailure;
+  const factory IntInputFailure.empty() = EmptyIntInputFailure;
 }
 
 @freezed
-class DoubleInputFailure with _$DoubleInputFailure {
+sealed class DoubleInputFailure with _$DoubleInputFailure {
   const DoubleInputFailure._();
-  const factory DoubleInputFailure.tooSmall(double min) = _TooSmallDouble;
-  const factory DoubleInputFailure.tooBig(double max) = _TooBigDouble;
-  const factory DoubleInputFailure.empty() = _EmptyDouble;
+  const factory DoubleInputFailure.tooSmall(double min) = TooSmallDoubleInputFailure;
+  const factory DoubleInputFailure.tooBig(double max) = TooBigDoubleInputFailure;
+  const factory DoubleInputFailure.empty() = EmptyDoubleInputFailure;
 }
 
 @freezed
-class BoolInputFailure with _$BoolInputFailure {
+sealed class BoolInputFailure with _$BoolInputFailure {
   const BoolInputFailure._();
-  const factory BoolInputFailure.isFalse() = _IsFalse;
+  const factory BoolInputFailure.isFalse() = IsFalseBoolInputFailure;
 }
 
 @freezed
-class ImageInputFailure with _$ImageInputFailure {
-  const factory ImageInputFailure.invalidUrl() = _InvalidUrl;
-  const factory ImageInputFailure.fileNotExists() = _FileNotExists;
-  const factory ImageInputFailure.empty() = _EmptyImage;
+sealed class ImageInputFailure with _$ImageInputFailure {
+  const factory ImageInputFailure.invalidUrl() = InvalidUrlImageInputFailure;
+  const factory ImageInputFailure.fileNotExists() = FileNotExistsImageInputFailure;
+  const factory ImageInputFailure.empty() = EmptyImageInputFailure;
 }
 
 @freezed
-class DropdownInputFailure with _$DropdownInputFailure {
-  const factory DropdownInputFailure.notSelected() = _NotSelected;
+sealed class DropdownInputFailure with _$DropdownInputFailure {
+  const factory DropdownInputFailure.notSelected() = NotSelectedDropdownInputFailure;
 }
 
 @freezed
-class MultiselectInputFailure with _$MultiselectInputFailure {
-  const factory MultiselectInputFailure.maxExceeded(max) = _MultiSelectMaxExceeded;
-  const factory MultiselectInputFailure.minNotReached(min) = _MultiSelectMinNotReached;
-  const factory MultiselectInputFailure.notSelected() = _MultiSelectNotSelected;
+sealed class MultiselectInputFailure with _$MultiselectInputFailure {
+  const factory MultiselectInputFailure.maxExceeded(max) = MaxExceededMultiselectInputFailure;
+  const factory MultiselectInputFailure.minNotReached(min) = MinNotReachedMultiselectInputFailure;
+  const factory MultiselectInputFailure.notSelected() = NotSelectedMultiselectInputFailure;
 }
 
 @freezed
-class FileInputFailure with _$FileInputFailure {
-  const factory FileInputFailure.fileNotExists() = _FileDoesNotExist;
-  const factory FileInputFailure.empty() = _EmptyFile;
-  const factory FileInputFailure.invalidExtension() = _InvalidExtension;
-  const factory FileInputFailure.fileTooLarge() = _FileTooLarge;
+sealed class FileInputFailure with _$FileInputFailure {
+  const factory FileInputFailure.fileNotExists() = FileNotExistsFileInputFailure;
+  const factory FileInputFailure.empty() = EmptyFileInputFailure;
+  const factory FileInputFailure.invalidExtension() = InvalidExtensionFileInputFailure;
+  const factory FileInputFailure.fileTooLarge() = FileTooLargeFileInputFailure;
 }

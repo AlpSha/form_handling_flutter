@@ -16,18 +16,18 @@ class ImageValidator extends CustomValidator<ImageType?, ImageInputFailure> {
       }
       return ValidationResult.success(value);
     }
-    return value.map(file: (_) {
-      if (!File(_.path).existsSync()) {
+    return value.map(file: (file) {
+      if (!File(file.path).existsSync()) {
         return ValidationResult.failure(ImageInputFailure.fileNotExists());
       }
       return ValidationResult.success(value);
-    }, network: (_) {
-      if (!RegExp(urlRegex).hasMatch(_.url)) {
+    }, network: (network) {
+      if (!RegExp(urlRegex).hasMatch(network.url)) {
         return ValidationResult.failure(ImageInputFailure.invalidUrl());
       }
       return ValidationResult.success(value);
-    }, webBytes: (_) {
-      if (_.bytes.isEmpty) {
+    }, webBytes: (webBytes) {
+      if (webBytes.bytes.isEmpty) {
         return ValidationResult.failure(ImageInputFailure.empty());
       }
       return ValidationResult.success(value);
