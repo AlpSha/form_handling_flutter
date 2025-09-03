@@ -19,5 +19,3 @@ dev_dependencies:
   freezed: ^2.0.3
   json_serializable: ^6.2.0
   lint: ^2.3.0
-
-flutter:
