@@ -2671,4 +2671,372 @@ String toString() {
 
 
 
+/// @nodoc
+mixin _$DurationInputFailure {
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DurationInputFailure);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DurationInputFailure()';
+}
+
+
+}
+
+/// @nodoc
+class $DurationInputFailureCopyWith<$Res>  {
+$DurationInputFailureCopyWith(DurationInputFailure _, $Res Function(DurationInputFailure) __);
+}
+
+
+/// Adds pattern-matching-related methods to [DurationInputFailure].
+extension DurationInputFailurePatterns on DurationInputFailure {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( EmptyDurationInputFailure value)?  empty,TResult Function( TooShortDurationInputFailure value)?  tooShort,TResult Function( TooLongDurationInputFailure value)?  tooLong,TResult Function( NegativeDurationInputFailure value)?  negative,required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case EmptyDurationInputFailure() when empty != null:
+return empty(_that);case TooShortDurationInputFailure() when tooShort != null:
+return tooShort(_that);case TooLongDurationInputFailure() when tooLong != null:
+return tooLong(_that);case NegativeDurationInputFailure() when negative != null:
+return negative(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( EmptyDurationInputFailure value)  empty,required TResult Function( TooShortDurationInputFailure value)  tooShort,required TResult Function( TooLongDurationInputFailure value)  tooLong,required TResult Function( NegativeDurationInputFailure value)  negative,}){
+final _that = this;
+switch (_that) {
+case EmptyDurationInputFailure():
+return empty(_that);case TooShortDurationInputFailure():
+return tooShort(_that);case TooLongDurationInputFailure():
+return tooLong(_that);case NegativeDurationInputFailure():
+return negative(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( EmptyDurationInputFailure value)?  empty,TResult? Function( TooShortDurationInputFailure value)?  tooShort,TResult? Function( TooLongDurationInputFailure value)?  tooLong,TResult? Function( NegativeDurationInputFailure value)?  negative,}){
+final _that = this;
+switch (_that) {
+case EmptyDurationInputFailure() when empty != null:
+return empty(_that);case TooShortDurationInputFailure() when tooShort != null:
+return tooShort(_that);case TooLongDurationInputFailure() when tooLong != null:
+return tooLong(_that);case NegativeDurationInputFailure() when negative != null:
+return negative(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  empty,TResult Function( Duration min)?  tooShort,TResult Function( Duration max)?  tooLong,TResult Function()?  negative,required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case EmptyDurationInputFailure() when empty != null:
+return empty();case TooShortDurationInputFailure() when tooShort != null:
+return tooShort(_that.min);case TooLongDurationInputFailure() when tooLong != null:
+return tooLong(_that.max);case NegativeDurationInputFailure() when negative != null:
+return negative();case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  empty,required TResult Function( Duration min)  tooShort,required TResult Function( Duration max)  tooLong,required TResult Function()  negative,}) {final _that = this;
+switch (_that) {
+case EmptyDurationInputFailure():
+return empty();case TooShortDurationInputFailure():
+return tooShort(_that.min);case TooLongDurationInputFailure():
+return tooLong(_that.max);case NegativeDurationInputFailure():
+return negative();}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  empty,TResult? Function( Duration min)?  tooShort,TResult? Function( Duration max)?  tooLong,TResult? Function()?  negative,}) {final _that = this;
+switch (_that) {
+case EmptyDurationInputFailure() when empty != null:
+return empty();case TooShortDurationInputFailure() when tooShort != null:
+return tooShort(_that.min);case TooLongDurationInputFailure() when tooLong != null:
+return tooLong(_that.max);case NegativeDurationInputFailure() when negative != null:
+return negative();case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+
+
+class EmptyDurationInputFailure extends DurationInputFailure {
+  const EmptyDurationInputFailure(): super._();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is EmptyDurationInputFailure);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DurationInputFailure.empty()';
+}
+
+
+}
+
+
+
+
+/// @nodoc
+
+
+class TooShortDurationInputFailure extends DurationInputFailure {
+  const TooShortDurationInputFailure(this.min): super._();
+  
+
+ final  Duration min;
+
+/// Create a copy of DurationInputFailure
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$TooShortDurationInputFailureCopyWith<TooShortDurationInputFailure> get copyWith => _$TooShortDurationInputFailureCopyWithImpl<TooShortDurationInputFailure>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TooShortDurationInputFailure&&(identical(other.min, min) || other.min == min));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,min);
+
+@override
+String toString() {
+  return 'DurationInputFailure.tooShort(min: $min)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $TooShortDurationInputFailureCopyWith<$Res> implements $DurationInputFailureCopyWith<$Res> {
+  factory $TooShortDurationInputFailureCopyWith(TooShortDurationInputFailure value, $Res Function(TooShortDurationInputFailure) _then) = _$TooShortDurationInputFailureCopyWithImpl;
+@useResult
+$Res call({
+ Duration min
+});
+
+
+
+
+}
+/// @nodoc
+class _$TooShortDurationInputFailureCopyWithImpl<$Res>
+    implements $TooShortDurationInputFailureCopyWith<$Res> {
+  _$TooShortDurationInputFailureCopyWithImpl(this._self, this._then);
+
+  final TooShortDurationInputFailure _self;
+  final $Res Function(TooShortDurationInputFailure) _then;
+
+/// Create a copy of DurationInputFailure
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? min = null,}) {
+  return _then(TooShortDurationInputFailure(
+null == min ? _self.min : min // ignore: cast_nullable_to_non_nullable
+as Duration,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class TooLongDurationInputFailure extends DurationInputFailure {
+  const TooLongDurationInputFailure(this.max): super._();
+  
+
+ final  Duration max;
+
+/// Create a copy of DurationInputFailure
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$TooLongDurationInputFailureCopyWith<TooLongDurationInputFailure> get copyWith => _$TooLongDurationInputFailureCopyWithImpl<TooLongDurationInputFailure>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TooLongDurationInputFailure&&(identical(other.max, max) || other.max == max));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,max);
+
+@override
+String toString() {
+  return 'DurationInputFailure.tooLong(max: $max)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $TooLongDurationInputFailureCopyWith<$Res> implements $DurationInputFailureCopyWith<$Res> {
+  factory $TooLongDurationInputFailureCopyWith(TooLongDurationInputFailure value, $Res Function(TooLongDurationInputFailure) _then) = _$TooLongDurationInputFailureCopyWithImpl;
+@useResult
+$Res call({
+ Duration max
+});
+
+
+
+
+}
+/// @nodoc
+class _$TooLongDurationInputFailureCopyWithImpl<$Res>
+    implements $TooLongDurationInputFailureCopyWith<$Res> {
+  _$TooLongDurationInputFailureCopyWithImpl(this._self, this._then);
+
+  final TooLongDurationInputFailure _self;
+  final $Res Function(TooLongDurationInputFailure) _then;
+
+/// Create a copy of DurationInputFailure
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? max = null,}) {
+  return _then(TooLongDurationInputFailure(
+null == max ? _self.max : max // ignore: cast_nullable_to_non_nullable
+as Duration,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class NegativeDurationInputFailure extends DurationInputFailure {
+  const NegativeDurationInputFailure(): super._();
+  
+
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is NegativeDurationInputFailure);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'DurationInputFailure.negative()';
+}
+
+
+}
+
+
+
+
 // dart format on

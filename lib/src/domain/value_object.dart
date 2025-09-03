@@ -2,6 +2,7 @@ import 'package:form_handling/src/application/bool_validator.dart';
 import 'package:form_handling/src/application/custom_validator.dart';
 import 'package:form_handling/src/application/date_validator.dart';
 import 'package:form_handling/src/application/dropdown_validator.dart';
+import 'package:form_handling/src/application/duration_validator.dart';
 import 'package:form_handling/src/application/file_validator.dart';
 import 'package:form_handling/src/application/form_notifier.dart';
 import 'package:form_handling/src/application/image_validator.dart';
@@ -86,6 +87,25 @@ class DateFieldObject extends FormFieldObject<DateTime?, DateTimeInputFailure> {
   }) : super.generate(
           validator: DateValidator(
             isRequired: isRequired,
+          ),
+          value: value,
+          emptyValue: null,
+        );
+}
+
+class DurationFieldObject extends FormFieldObject<Duration?, DurationInputFailure> {
+  DurationFieldObject.generate({
+    Duration? value,
+    required bool isRequired,
+    Duration? min,
+    Duration? max,
+    bool allowNegative = false,
+  }) : super.generate(
+          validator: DurationValidator(
+            isRequired: isRequired,
+            min: min,
+            max: max,
+            allowNegative: allowNegative,
           ),
           value: value,
           emptyValue: null,

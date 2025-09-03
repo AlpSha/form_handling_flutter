@@ -68,3 +68,12 @@ sealed class FileInputFailure with _$FileInputFailure {
   const factory FileInputFailure.invalidExtension() = InvalidExtensionFileInputFailure;
   const factory FileInputFailure.fileTooLarge() = FileTooLargeFileInputFailure;
 }
+
+@freezed
+sealed class DurationInputFailure with _$DurationInputFailure {
+  const DurationInputFailure._();
+  const factory DurationInputFailure.empty() = EmptyDurationInputFailure;
+  const factory DurationInputFailure.tooShort(Duration min) = TooShortDurationInputFailure;
+  const factory DurationInputFailure.tooLong(Duration max) = TooLongDurationInputFailure;
+  const factory DurationInputFailure.negative() = NegativeDurationInputFailure;
+}
